@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Career index{% endblock %}
+
+{% block body %}
+    <h1>Career index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CareerTitle</th>
+                <th>CareerCompany</th>
+                <th>CareerCity</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for career in careers %}
+            <tr>
+                <td>{{ career.id }}</td>
+                <td>{{ career.careerTitle }}</td>
+                <td>{{ career.careerCompany }}</td>
+                <td>{{ career.careerCity }}</td>
+                <td>{{ career.startDate ? career.startDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ career.endDate ? career.endDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_career_show', {'id': career.id}) }}">show</a>
+                    <a href="{{ path('app_career_edit', {'id': career.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_career_new') }}">Create new</a>
+{% endblock %}
