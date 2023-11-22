@@ -23,11 +23,11 @@ class Career
     #[ORM\Column(length: 100)]
     private ?string $careerCity = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $startDate = null;
+    #[ORM\Column(type: "integer", name: "start_date", nullable: true)]
+    private ?int $startDate = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $endDate = null;
+    #[ORM\Column(type: "integer", name: "end_date", nullable: true)]
+    private ?int $endDate = null;
 
     public function getId(): ?int
     {
@@ -70,24 +70,24 @@ class Career
         return $this;
     }
 
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?int
     {
         return $this->startDate;
     }
 
-    public function setStartDate(\DateTimeInterface $startDate): static
+    public function setStartDate(?int $startDate): static
     {
         $this->startDate = $startDate;
 
         return $this;
     }
 
-    public function getEndDate(): ?\DateTimeInterface
+    public function getEndDate(): ?int
     {
         return $this->endDate;
     }
 
-    public function setEndDate(\DateTimeInterface $endDate): static
+    public function setEndDate(?int $endDate): static
     {
         $this->endDate = $endDate;
 

@@ -8,13 +8,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class AboutType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('aboutText')
+            ->add('aboutText', TextType::class, [
+                'label' => 'Texte'
+            ])
             ->add('aboutPicture', FileType::class, [
                 'label' => 'Photo',
                 'mapped' => false,

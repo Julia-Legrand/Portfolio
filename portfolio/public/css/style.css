@@ -1,1 +1,282 @@
-/*# sourceMappingURL=style.css.map */
+/*************** GLOBAL ***************/
+h1 {
+  font-family: "Alata", sans-serif;
+  font-size: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+h2 {
+  font-family: "Over the Rainbow", cursive;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2::after {
+  display: block;
+  height: 1px;
+  width: 100px;
+  content: "";
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+h3 {
+  font-family: "Over the Rainbow", cursive;
+  font-size: 25px;
+  text-align: center;
+}
+
+h3::after {
+  display: block;
+  height: 1px;
+  width: 100px;
+  content: "";
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+p,
+a,
+label,
+select {
+  font-family: "Montserrat", sans-serif;
+}
+
+.button {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+  border: none;
+  background-color: none;
+}
+
+/*************** INDEX ***************/
+/***** HEADER *****/
+header {
+  height: 100vh;
+  background-image: linear-gradient(rgba(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header .navbar-nav a {
+  text-transform: uppercase;
+  margin: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+header .navbar-nav a:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+header .navbar-nav a:hover:after {
+  width: 100%;
+  background: white;
+}
+header #presentation {
+  height: 80vh;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-shadow: #f4eff3 1px 0 5px;
+}
+
+/***** ABOUT *****/
+#about {
+  background-color: #020406;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 80px;
+}
+#about .aboutText {
+  width: 500px;
+  text-align: justify;
+  margin: 20px 0;
+}
+#about .aboutPicture img {
+  box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 30px 0px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+/***** SKILLS *****/
+#skills {
+  background-color: #020406;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 80px;
+}
+#skills .skillBlocs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#skills .skillBlocs .skillBloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+  margin: 40px;
+}
+#skills .skillBlocs .skillBloc img {
+  border-radius: 50%;
+  margin: 20px;
+}
+
+/***** PROJECTS *****/
+#projects {
+  background-color: #020406;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#projects .projectBlocs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: start;
+  margin-bottom: 60px;
+}
+#projects .projectBlocs .projectBloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+  margin: 40px 60px;
+}
+#projects .projectBlocs .projectBloc img {
+  margin: 40px;
+  box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 30px 0px;
+}
+
+/***** CAREER *****/
+#career {
+  background-color: #020406;
+}
+#career h2 {
+  color: white;
+}
+#career * {
+  box-sizing: border-box;
+}
+#career .timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+#career .timeline:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 2px;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+}
+#career .timeline article {
+  position: relative;
+  background: #eeeeee;
+  width: calc(50% - 40px);
+  padding: 15px;
+}
+#career .timeline article + article {
+  margin-top: 20px;
+}
+#career .timeline article:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 29px);
+  background: #d6d6d6;
+  width: 24px;
+  height: 24px;
+  border: 2px white solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+#career .timeline article:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-left: 22px solid #eeeeee;
+  border-bottom: 12px solid transparent;
+}
+#career .timeline article:nth-child(even) {
+  margin-left: calc(50% + 48px);
+}
+#career .timeline article:nth-child(even):before {
+  left: auto;
+  right: calc(100% + 26px);
+}
+#career .timeline article:nth-child(even):after {
+  left: auto;
+  right: 100%;
+  border-left: none;
+  border-right: 16px solid #eeeeee;
+}
+#career .timeline article ul {
+  margin: 0;
+  padding: 0;
+}
+#career .timeline article li {
+  list-style: none;
+  padding: 8px 0;
+}
+#career .timeline article li:not(:last-child) {
+  border-bottom: 1px #aaa solid;
+}
+#career .timeline article li span {
+  display: inline-block;
+  width: 70px;
+  color: black;
+}
+
+/***** CV *****/
+/***** CONTACT *****/
+/***** FOOTER *****//*# sourceMappingURL=style.css.map */

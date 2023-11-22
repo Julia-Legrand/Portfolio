@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ProjectsType extends AbstractType
 {
@@ -28,8 +29,12 @@ class ProjectsType extends AbstractType
                     ])
                 ]
             ])
-            ->add('projectTitle')
-            ->add('projectText')
+            ->add('projectTitle', TextType::class, [
+                'label' => 'Titre du projet'
+            ])
+            ->add('projectText', TextType::class, [
+                'label' => 'Présentation'
+            ])
             ->add('skills', EntityType::class, [
                 'class' => Skills::class,
                 'choice_label' => 'skillTitle',

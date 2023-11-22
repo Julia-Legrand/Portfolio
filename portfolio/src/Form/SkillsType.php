@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SkillsType extends AbstractType
 {
@@ -25,9 +26,15 @@ class SkillsType extends AbstractType
                         ])
                 ],
             ])
-            ->add('skillTitle')
-            ->add('skillText')
-            ->add('skillList')
+            ->add('skillTitle', TextType::class, [
+                'label' => 'Titre'
+            ])
+            ->add('skillText', TextType::class, [
+                'label' => 'Texte'
+            ])
+            ->add('skillList', TextType::class, [
+                'label' => 'Langages et outils'
+            ])
         ;
     }
 

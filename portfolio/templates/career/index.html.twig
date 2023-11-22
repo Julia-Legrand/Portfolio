@@ -24,8 +24,8 @@
                 <td>{{ career.careerTitle }}</td>
                 <td>{{ career.careerCompany }}</td>
                 <td>{{ career.careerCity }}</td>
-                <td>{{ career.startDate ? career.startDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ career.endDate ? career.endDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ career.startDate }}</td>
+                <td>{{ career.endDate }}</td>
                 <td>
                     <a href="{{ path('app_career_show', {'id': career.id}) }}">show</a>
                     <a href="{{ path('app_career_edit', {'id': career.id}) }}">edit</a>

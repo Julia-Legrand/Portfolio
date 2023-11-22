@@ -30,6 +30,9 @@ class CareerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $career->setStartDate((int) $form->get('startDate')->getData());
+            $career->setEndDate((int) $form->get('endDate')->getData());
+
             $entityManager->persist($career);
             $entityManager->flush();
 
@@ -57,6 +60,9 @@ class CareerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $career->setStartDate((int) $form->get('startDate')->getData());
+            $career->setEndDate((int) $form->get('endDate')->getData());
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_career_index', [], Response::HTTP_SEE_OTHER);

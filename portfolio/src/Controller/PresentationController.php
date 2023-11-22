@@ -44,6 +44,19 @@ class PresentationController extends AbstractController
         
                 $presentation->setWallpaper($newFilename);
             }
+            $imageFile = $form->get('cv')->getData();
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+        
+                $imageFile->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+        
+                $presentation->setCv($newFilename);
+            }
             $entityManager->persist($presentation);
             $entityManager->flush();
 

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PresentationType extends AbstractType
 {
@@ -26,7 +27,9 @@ class PresentationType extends AbstractType
                     ])
                 ]
             ])
-            ->add('title')
+            ->add('title', TextType::class, [
+                'label' => 'Titre'
+            ])
             ->add('cv', FileType::class, [
                 'label' => 'CV',
                 'mapped' => false,
@@ -34,13 +37,20 @@ class PresentationType extends AbstractType
                 'constraints' => [
                     new File([
                         'maxSize' => '2000k',
-                        'mimeTypes' => ['image/*',],
-                        'mimeTypesMessage' => 'Image ne répondant pas aux contraintes.',
+                        'mimeTypes' => [
+                            'application/pdf',
+                            'application/x-pdf',
+                        ],
+                        'mimeTypesMessage' => 'Document ne répondant pas aux contraintes.',
                     ])
                 ]
             ])
-            ->add('githubLink')
-            ->add('linkedinLink')
+            ->add('githubLink', TextType::class, [
+                'label' => 'Lien Github'
+            ])
+            ->add('linkedinLink', TextType::class, [
+                'label' => 'Lien LinkedIn'
+            ])
         ;
     }
 
