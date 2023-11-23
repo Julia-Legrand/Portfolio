@@ -133,6 +133,7 @@ header #presentation {
 /***** SKILLS *****/
 #skills {
   background-image: linear-gradient(rgba(1, 1, 1, 0.85), rgba(1, 1, 1, 0.85)), url(../images/imageCode2.jpg);
+  background-attachment: fixed;
   color: white;
   display: flex;
   flex-direction: column;
@@ -193,14 +194,14 @@ header #presentation {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 20px 0px;
 }
 #projects .projectBlocs .projectBloc img:hover {
-  width: 420px;
+  box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
   transition: 1s;
 }
 
 /***** CAREER *****/
 #career {
   background-color: #0D121C;
-  padding: 60px 0;
+  padding: 20px 0 40px 0;
 }
 #career h2 {
   color: white;
@@ -290,15 +291,12 @@ header #presentation {
   background-image: url(../images/imageCode.jpg);
   background-position: center;
   background-size: cover;
-  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
   position: relative;
 }
 #cv .cv {
-  position: absolute;
   height: 180px;
   width: 180px;
   border-radius: 50%;
@@ -307,6 +305,7 @@ header #presentation {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 60px;
 }
 #cv .cv .cv-link {
   z-index: 1;
@@ -330,6 +329,7 @@ header #presentation {
 /***** CONTACT *****/
 #contact-me {
   background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -347,8 +347,11 @@ header #presentation {
   border-radius: 5px;
   margin-bottom: 40px;
   display: block;
-  width: 500px;
+  width: 800px;
   padding: 10px;
+}
+#contact-me #contact_agreeTerms {
+  margin-left: 5px;
 }
 
 /***** FOOTER *****/
@@ -358,6 +361,38 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: #080A0B;
+  color: white;
+}
+footer .socials i {
+  color: white;
+  margin: 10px 5px;
+}
+footer .legals2 a {
+  color: white;
+  margin: 20px 5px;
+}
+
+/*************** LEGAL PAGES ***************/
+.mainLegals {
   background-color: #0D121C;
   color: white;
+}
+.mainLegals h1 {
+  font-size: 70px;
+  padding: 40px;
+}
+.mainLegals .blocsLegals {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 20px;
+}
+.mainLegals .blocsLegals .blocLeft, .mainLegals .blocsLegals .blocRight {
+  width: 50%;
+  padding: 30px;
+  text-align: justify;
+}
+.mainLegals .blocsLegals h2, .mainLegals .blocsLegals h3 {
+  padding-top: 20px;
 }/*# sourceMappingURL=style.css.map */
