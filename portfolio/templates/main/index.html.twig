@@ -68,9 +68,12 @@
         <div class="projectBlocs">
             {% for project in projects %}
                 <div class="projectBloc">
-                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 300px;">
+                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}">
                     <h3>{{ project.projectTitle }}</h3>
                     <p>{{ project.projectText }}</p>
+                    {% for skill in project.skills %}
+                        <span>{{ skill.skillTitle }}</span>
+                    {% endfor %}
                 </div>
             {% endfor %}
         </div>
@@ -80,23 +83,27 @@
 
     <section id="career">
         <h2>Parcours</h2>
-        {% for career in careers %}
-            <div class="timeline">
+        <div class="timeline">
+            {% for career in careers %}
                 <article>
                     <p><strong>{{ career.careerTitle }}</strong></p>
-                    <p>{{ career.careerCompany }}</p>
-                    <p>{{ career.careerCity }}</p>
-                    <p>{{ career.startDate }} - {{ career.endDate }}</p>
+                    <ul>
+                        <li>{{ career.careerCompany }}</li>
+                        <li>{{ career.careerCity }}</li>
+                        <li>{{ career.startDate }} - {{ career.endDate }}</li>
+                    </ul>
                 </article>
-            </div>
-        {% endfor %}          
+            {% endfor %}
+        </div> 
     </section>
 
 <!--------------------Télécharger le CV-------------------->
 
     <section id="cv">
         <div class="cv">
-            <a class="cv-link" href="" download>Télécharger mon CV</a>
+            <div class="cv-link">
+                <a href="" download>Télécharger mon CV</a>
+            </div>
         </div>
     </section>
 
