@@ -45,28 +45,28 @@ h3::after {
 
 p,
 a,
+small,
 label,
 select {
   font-family: "Montserrat", sans-serif;
 }
 
 .button {
-  color: white;
+  color: #0D121C;
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.9;
 }
 
 .button:hover {
-  color: white;
+  color: #0D121C;
   text-decoration: none;
-}
-
-.btn {
-  border: none;
-  background-color: none;
+  box-shadow: #f4eff3 1px 0 5px;
+  opacity: 1;
 }
 
 /*************** INDEX ***************/
@@ -138,7 +138,7 @@ header #presentation {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 90px;
+  padding: 90px 0;
 }
 #skills .skillBlocs {
   display: flex;
@@ -168,7 +168,7 @@ header #presentation {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px;
+  padding: 80px 0;
 }
 #projects .projectBlocs {
   display: flex;
@@ -193,14 +193,14 @@ header #presentation {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 20px 0px;
 }
 #projects .projectBlocs .projectBloc img:hover {
-  width: 510px;
+  width: 420px;
   transition: 1s;
 }
 
 /***** CAREER *****/
 #career {
   background-color: #0D121C;
-  padding: 60px;
+  padding: 60px 0;
 }
 #career h2 {
   color: white;
@@ -221,7 +221,7 @@ header #presentation {
   top: 20px;
   bottom: 20px;
   left: 50%;
-  width: 8px;
+  width: 2px;
   background: #eeeeee;
   border-radius: 3px;
   z-index: 1;
@@ -241,11 +241,11 @@ header #presentation {
   display: block;
   position: absolute;
   top: 0;
-  left: calc(100% + 26px);
+  left: calc(100% + 29px);
   background: #d6d6d6;
   width: 24px;
   height: 24px;
-  border: 6px #eeeeee solid;
+  border: 2px #eeeeee solid;
   border-radius: 50%;
   z-index: 2;
 }
@@ -256,16 +256,16 @@ header #presentation {
   left: 100%;
   width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-left: 16px solid #eeeeee;
-  border-bottom: 20px solid transparent;
+  border-top: 12px solid transparent;
+  border-left: 15px solid #eeeeee;
+  border-bottom: 12px solid transparent;
 }
 #career .timeline article:nth-child(even) {
-  margin-left: calc(50% + 48px);
+  margin-left: calc(50% + 45px);
 }
 #career .timeline article:nth-child(even):before {
   left: auto;
-  right: calc(100% + 26px);
+  right: calc(100% + 32px);
 }
 #career .timeline article:nth-child(even):after {
   left: auto;
@@ -284,32 +284,38 @@ header #presentation {
 #career .timeline article li:not(:last-child) {
   border-bottom: 1px #aaa solid;
 }
-#career .timeline article li span {
-  display: inline-block;
-  width: 70px;
-  color: #346abf;
-}
 
 /***** CV *****/
 #cv {
   background-image: url(../images/imageCode.jpg);
   background-position: center;
   background-size: cover;
-  height: 25vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 40px 0;
+  position: relative;
 }
 #cv .cv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  width: 150px;
+  position: absolute;
+  height: 180px;
+  width: 180px;
   border-radius: 50%;
   border: #0D121C solid 4px;
   box-shadow: rgb(1, 1, 1) 0px 0px 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cv .cv .cv-link {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EDEAEB;
+  opacity: 0.9;
+  padding: 10px 20px;
 }
 #cv .cv .cv-link a {
   font-size: 30px;
@@ -317,7 +323,41 @@ header #presentation {
   color: #0D121C;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
+  text-shadow: #0D121C 1px 0 5px;
 }
 
 /***** CONTACT *****/
-/***** FOOTER *****//*# sourceMappingURL=style.css.map */
+#contact-me {
+  background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+#contact-me .custom-form {
+  background-color: #EDEAEB;
+  opacity: 0.7;
+  border: 1px solid #EDEAEB;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  display: block;
+  width: 500px;
+  padding: 10px;
+}
+
+/***** FOOTER *****/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #0D121C;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

@@ -35,7 +35,7 @@ class PresentationController extends AbstractController
             if ($imageFile) {
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                $newFilename = $safeFilename . '.' . $imageFile->guessExtension();
         
                 $imageFile->move(
                     $this->getParameter('images_directory'),
@@ -48,7 +48,7 @@ class PresentationController extends AbstractController
             if ($imageFile) {
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+                $newFilename = $safeFilename . '.' . $imageFile->guessExtension();
         
                 $imageFile->move(
                     $this->getParameter('images_directory'),

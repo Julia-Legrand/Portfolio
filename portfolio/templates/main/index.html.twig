@@ -72,7 +72,7 @@
                     <h3>{{ project.projectTitle }}</h3>
                     <p>{{ project.projectText }}</p>
                     {% for skill in project.skills %}
-                        <span>{{ skill.skillTitle }}</span>
+                        <small>{{ skill.skillTitle }}</small>
                     {% endfor %}
                 </div>
             {% endfor %}
@@ -102,27 +102,34 @@
     <section id="cv">
         <div class="cv">
             <div class="cv-link">
-                <a href="" download>Télécharger mon CV</a>
+                {% for presentation in presentations %}
+                    <a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV</a>
+                {% endfor %}
             </div>
         </div>
     </section>
 
 <!--------------------Contact-------------------->
 
-    <section id="contact">
+    <section id="contact-me">
         <h2>Contactez-moi</h2>
-        <!-- Formulaire de contact -->
+        {{ include('contact/_form.html.twig') }}
     </section>
 {% endblock %}
 
 {% block footer %}
+<footer>
     {% for presentation in presentations %}
-		<div class="legals">
-			<p>Julia LEGRAND © | 2023 | Tous droits réservés.</p>
+		<div class="legals1">
+			<p>Julia LEGRAND | 2023 | Tous droits réservés.</p>
 		</div>
 		<div class="socials">
-			<a href="{{ presentation.githubLink }}"><i class="fa-brands fa-github"></i></a>
-			<a href="{{ presentation.linkedinLink }}"><i class="fa-brands fa-linkedin"></i></a>
+			<a href="https://{{ presentation.githubLink }}" target="_blank"><i class="fa-brands fa-github" style="color:white; margin: 5px;"></i></a>
+			<a href="https://{{ presentation.linkedinLink }}" target="_blank"><i class="fa-brands fa-linkedin" style="color:white; margin: 5px;"></i></a>
+		</div>
+        <div class="legals2">
+			<small><a href="">Politique de confidentialité</a> | <a href="">Mentions légales</a></small>
 		</div>
 	{% endfor %}
+</footer>
 {% endblock %}
