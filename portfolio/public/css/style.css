@@ -368,6 +368,14 @@ header #presentation-section {
   width: calc(50% - 40px);
   padding: 15px;
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 10px 0px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+#career-section .timeline article.visible {
+  /* Styles lorsqu'un article devient visible */
+  opacity: 1;
+  transform: translateY(0);
 }
 #career-section .timeline article + article {
   margin-top: 20px;
@@ -442,6 +450,7 @@ header #presentation-section {
   align-items: center;
   margin: 60px;
   border-radius: 50%;
+  transition: transform 1s ease-in-out;
 }
 #cv-section .cv .cv-link {
   z-index: 1;
@@ -460,6 +469,9 @@ header #presentation-section {
   text-decoration: none;
   text-align: center;
   text-shadow: #0D121C 1px 0 5px;
+}
+#cv-section .cv:hover {
+  transform: rotate(360deg);
 }
 
 /***** CONTACT *****/
@@ -600,7 +612,8 @@ footer .legals2 a {
 .mainIndex .table {
   width: 700px;
 }
-.mainIndex .table th, .mainIndex .table td {
+.mainIndex .table th,
+.mainIndex .table td {
   text-align: center;
 }
 .mainIndex a {
