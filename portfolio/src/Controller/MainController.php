@@ -47,14 +47,15 @@ class MainController extends AbstractController
 
     #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]
-    public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository): Response
+    public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, ContactRepository $contactRepository): Response
     {
-        return $this->render('main/index.html.twig', [
+        return $this->render('main/admin.html.twig', [
             'abouts' => $aboutRepository->findAll(),
             'presentations' => $presentationRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'projects' => $projectsRepository->findAll(),
             'careers' => $careerRepository->findAll(),
+            'contacts' => $contactRepository->findAll(),
         ]);
     }
 

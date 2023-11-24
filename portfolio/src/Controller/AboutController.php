@@ -56,21 +56,27 @@ class AboutController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_about_show', methods: ['GET'])]
-    public function show(About $about): Response
-    {
-        return $this->render('about/show.html.twig', [
-            'about' => $about,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_about_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, About $about, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, About $about, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(AboutType::class, $about);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('aboutPicture')->getData();
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+        
+                $imageFile->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+        
+                $about->setAboutPicture($newFilename);
+            }
+            
             $entityManager->flush();
 
             return $this->redirectToRoute('app_about_index', [], Response::HTTP_SEE_OTHER);
@@ -80,16 +86,5 @@ class AboutController extends AbstractController
             'about' => $about,
             'form' => $form,
         ]);
-    }
-
-    #[Route('/{id}', name: 'app_about_delete', methods: ['POST'])]
-    public function delete(Request $request, About $about, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$about->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($about);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('app_about_index', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -1,37 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}About index{% endblock %}
+{% block title %}A propos{% endblock %}
 
 {% block body %}
-    <h1>About index</h1>
+<main class="mainIndex">
+    <h2>A propos</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>AboutText</th>
-                <th>AboutPicture</th>
-                <th>actions</th>
+                <th>Texte</th>
+                <th>Photo</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for about in abouts %}
             <tr>
-                <td>{{ about.id }}</td>
                 <td>{{ about.aboutText }}</td>
-                <td>{{ about.aboutPicture }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80px"></td>
                 <td>
-                    <a href="{{ path('app_about_show', {'id': about.id}) }}">show</a>
-                    <a href="{{ path('app_about_edit', {'id': about.id}) }}">edit</a>
+                    <a href="{{ path('app_about_edit', {'id': about.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Donnée vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_about_new') }}">Create new</a>
+    <div class="buttons">
+        <a href="{{ path('admin') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

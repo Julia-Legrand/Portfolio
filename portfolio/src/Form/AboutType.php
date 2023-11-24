@@ -16,10 +16,12 @@ class AboutType extends AbstractType
     {
         $builder
             ->add('aboutText', TextType::class, [
-                'label' => 'Texte'
+                'label' => 'Texte',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('aboutPicture', FileType::class, [
                 'label' => 'Photo',
+                'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -29,8 +31,7 @@ class AboutType extends AbstractType
                         'mimeTypesMessage' => 'Image ne répondant pas aux contraintes.',
                     ])
                 ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
