@@ -24,7 +24,7 @@ class PresentationController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_presentation_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Presentation $presentation, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Presentation $presentation, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(PresentationType::class, $presentation);
         $form->handleRequest($request);

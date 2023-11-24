@@ -1,3 +1,139 @@
+/*************** INDEX ***************/
+@media all and (max-width: 1400px) {
+  /***** PROJECTS *****/
+  #projects-section .projectBloc {
+    width: 300px !important;
+  }
+  #projects-section .projectBloc img {
+    width: 300px !important;
+  }
+}
+@media all and (max-width: 1070px) {
+  /***** PROJECTS *****/
+  #projects-section .projectBlocs {
+    flex-direction: column !important;
+    justify-content: space-evenly;
+    align-items: center !important;
+  }
+}
+@media all and (max-width: 800px) {
+  /***** ABOUT *****/
+  #about-section {
+    flex-direction: column;
+    padding: 60px 20px !important;
+  }
+  #about-section .aboutText {
+    width: 500px !important;
+    margin: 50px 30px !important;
+  }
+  /***** SKILLS *****/
+  #skills-section .skillBlocs {
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+  }
+  /***** CONTACT *****/
+  #contact-section {
+    padding: 40px !important;
+  }
+  #contact-section .custom-form {
+    width: 500px !important;
+  }
+}
+@media all and (max-width: 700px) {
+  /***** HEADER *****/
+  header #presentation-section {
+    margin-top: 250px !important;
+    margin-left: 0 !important;
+    align-items: center !important;
+  }
+  header #presentation-section h1 {
+    font-size: 70px;
+  }
+}
+@media all and (max-width: 520px) {
+  /***** HEADER *****/
+  header {
+    height: 70vh !important;
+  }
+  header #presentation-section {
+    margin-top: 200px !important;
+  }
+  header #presentation-section h1 {
+    font-size: 50px;
+  }
+  /***** ABOUT *****/
+  #about-section {
+    padding: 0 !important;
+  }
+  #about-section .aboutText {
+    width: 260px !important;
+    margin: 40px 40px !important;
+  }
+  /***** CAREER *****/
+  #career-section .timeline {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #career-section .timeline:after {
+    display: none;
+  }
+  #career-section .timeline article {
+    width: 380px !important;
+    padding: 15px;
+  }
+  #career-section .timeline article + article {
+    margin-top: 20px;
+  }
+  #career-section .timeline article:before {
+    display: none !important;
+  }
+  #career-section .timeline article:after {
+    display: none;
+  }
+  #career-section .timeline article:nth-child(even) {
+    margin-left: 0 !important;
+  }
+  #career-section .timeline article:nth-child(even):before {
+    display: none;
+  }
+  #career-section .timeline article:nth-child(even):after {
+    display: none;
+  }
+  #career-section .timeline article li:not(:last-child) {
+    border-bottom: 1px #aaa solid;
+  }
+  /***** CONTACT *****/
+  #contact-section .custom-form {
+    width: 280px !important;
+  }
+}
+@media all and (max-width: 400px) {
+  /***** HEADER *****/
+  header #presentation-section h1 {
+    font-size: 40px;
+  }
+  /***** ABOUT *****/
+  #about-section .aboutPicture img {
+    width: 250px;
+    height: auto;
+    margin: 20px 0 60px 0 !important;
+  }
+  /***** PROJECTS *****/
+  #projects-section .projectBloc {
+    width: 280px !important;
+  }
+  #projects-section .projectBloc img {
+    width: 280px !important;
+  }
+  /***** CAREER *****/
+  #career-section .timeline article {
+    width: 280px !important;
+  }
+}
 /*************** GLOBAL ***************/
 h1 {
   font-family: "Alata", sans-serif;
@@ -100,7 +236,7 @@ header .navbar-nav a:hover:after {
   background: white;
 }
 header #presentation-section {
-  height: 80vh;
+  margin-top: 200px;
   margin-left: 40px;
   display: flex;
   flex-direction: column;
@@ -121,7 +257,7 @@ header #presentation-section {
 #about-section .aboutText {
   width: 600px;
   text-align: center;
-  margin: 60px 0;
+  margin: 60px 20px;
   line-height: 30px;
 }
 #about-section .aboutPicture img {
@@ -145,7 +281,7 @@ header #presentation-section {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: start;
 }
 #skills-section .skillBlocs .skillBloc {
   display: flex;
@@ -153,7 +289,6 @@ header #presentation-section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 280px;
   margin: 40px;
 }
 #skills-section .skillBlocs .skillBloc img {
@@ -364,6 +499,7 @@ footer {
   padding: 20px;
   background-color: #080A0B;
   color: white;
+  text-align: center;
 }
 footer .socials i {
   color: white;
@@ -437,7 +573,7 @@ footer .legals2 a {
 }
 .mainAdmin #dashboard {
   background-color: #d6d6d6;
-  padding: 20px;
+  width: 100%;
 }
 .mainAdmin h3 {
   margin-top: 20px;

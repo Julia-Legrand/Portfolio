@@ -1,0 +1,192 @@
+/*************** INDEX ***************/
+@media all and (max-width:1400px) {
+
+    /***** PROJECTS *****/
+    #projects-section {
+        .projectBloc {
+            width: 300px !important;
+
+            img {
+                width: 300px !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width:1070px) {
+
+    /***** PROJECTS *****/
+    #projects-section {
+        .projectBlocs {
+            flex-direction: column !important;
+            justify-content: space-evenly;
+            align-items: center !important;
+        }
+    }
+}
+
+@media all and (max-width:800px) {
+
+    /***** ABOUT *****/
+    #about-section {
+        flex-direction: column;
+        padding: 60px 20px !important;
+
+        .aboutText {
+            width: 500px !important;
+            margin: 50px 30px !important;
+        }
+    }
+
+    /***** SKILLS *****/
+    #skills-section {
+        .skillBlocs {
+            flex-direction: column !important;
+            justify-content: space-evenly !important;
+            align-items: center !important;
+        }
+    }
+
+    /***** CONTACT *****/
+    #contact-section {
+        padding: 40px !important;
+        .custom-form {
+            width: 500px !important;
+        }
+    }
+}
+
+@media all and (max-width:700px) {
+
+    /***** HEADER *****/
+    header {
+        #presentation-section {
+            margin-top: 250px !important;
+            margin-left: 0 !important;
+            align-items: center !important;
+
+            h1 {
+                font-size: 70px;
+            }
+        }
+    }
+}
+
+@media all and (max-width:520px) {
+
+    /***** HEADER *****/
+    header {
+        height: 70vh !important;
+
+        #presentation-section {
+            margin-top: 200px !important;
+
+            h1 {
+                font-size: 50px;
+            }
+        }
+    }
+
+    /***** ABOUT *****/
+    #about-section {
+        padding: 0 !important;
+
+        .aboutText {
+            width: 260px !important;
+            margin: 40px 40px !important;
+        }
+    }
+
+    /***** CAREER *****/
+    #career-section {
+        .timeline {
+            padding: 0 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline:after {
+            display: none;
+        }
+
+        .timeline article {
+            width: 380px !important;
+            padding: 15px;
+        }
+
+        .timeline article+article {
+            margin-top: 20px;
+        }
+
+        .timeline article:before {
+            display: none !important;
+        }
+
+        .timeline article:after {
+            display: none;
+        }
+
+        .timeline article:nth-child(even) {
+            margin-left: 0 !important;
+        }
+
+        .timeline article:nth-child(even):before {
+            display: none;
+        }
+
+        .timeline article:nth-child(even):after {
+            display: none;
+        }
+
+        .timeline article li:not(:last-child) {
+            border-bottom: 1px #aaa solid;
+        }
+    }
+    /***** CONTACT *****/
+    #contact-section {
+        .custom-form {
+            width: 280px !important;
+        }
+    }
+}
+
+@media all and (max-width:400px) {
+
+    /***** HEADER *****/
+    header {
+        #presentation-section {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    /***** ABOUT *****/
+    #about-section {
+        .aboutPicture img {
+            width: 250px;
+            height: auto;
+            margin: 20px 0 60px 0 !important;
+        }
+    }
+
+    /***** PROJECTS *****/
+    #projects-section {
+        .projectBloc {
+            width: 280px !important;
+
+            img {
+                width: 280px !important;
+            }
+        }
+    }
+
+    /***** CAREER *****/
+    #career-section {
+        .timeline article {
+            width: 280px !important;
+        }
+    }
+}
