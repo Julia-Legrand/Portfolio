@@ -23,39 +23,6 @@ class AboutController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_about_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
-    {
-        $about = new About();
-        $form = $this->createForm(AboutType::class, $about);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $imageFile = $form->get('aboutPicture')->getData();
-            if ($imageFile) {
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-        
-                $imageFile->move(
-                    $this->getParameter('images_directory'),
-                    $newFilename
-                );
-        
-                $about->setAboutPicture($newFilename);
-            }
-            $entityManager->persist($about);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_about_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('about/new.html.twig', [
-            'about' => $about,
-            'form' => $form,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_about_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, About $about, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
@@ -76,7 +43,7 @@ class AboutController extends AbstractController
         
                 $about->setAboutPicture($newFilename);
             }
-            
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_about_index', [], Response::HTTP_SEE_OTHER);

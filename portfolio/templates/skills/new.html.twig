@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Skills{% endblock %}
+{% block title %}Nouveau Domaine d'expertise{% endblock %}
 
 {% block body %}
-    <h1>Create new Skills</h1>
+<main class="mainIndex">
+    <h2>Ajouter</h2>
 
-    {{ include('skills/_form.html.twig') }}
-
-    <a href="{{ path('app_skills_index') }}">back to list</a>
+    <div class="buttons">
+        {{ include('skills/_form.html.twig') }}
+        <a href="{{ path('app_skills_index') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

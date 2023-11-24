@@ -99,7 +99,7 @@ header .navbar-nav a:hover:after {
   width: 100%;
   background: white;
 }
-header #presentation {
+header #presentation-section {
   height: 80vh;
   margin-left: 40px;
   display: flex;
@@ -110,7 +110,7 @@ header #presentation {
 }
 
 /***** ABOUT *****/
-#about-me {
+#about-section {
   background-color: #0D121C;
   color: white;
   display: flex;
@@ -118,20 +118,20 @@ header #presentation {
   align-items: center;
   padding: 80px;
 }
-#about-me .aboutText {
+#about-section .aboutText {
   width: 600px;
   text-align: center;
   margin: 60px 0;
   line-height: 30px;
 }
-#about-me .aboutPicture img {
+#about-section .aboutPicture img {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 30px 0px;
   border-radius: 50%;
   margin: 60px 0;
 }
 
 /***** SKILLS *****/
-#skills {
+#skills-section {
   background-image: linear-gradient(rgba(1, 1, 1, 0.85), rgba(1, 1, 1, 0.85)), url(../images/imageCode2.jpg);
   background-attachment: fixed;
   color: white;
@@ -141,13 +141,13 @@ header #presentation {
   align-items: center;
   padding: 90px 0;
 }
-#skills .skillBlocs {
+#skills-section .skillBlocs {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
-#skills .skillBlocs .skillBloc {
+#skills-section .skillBlocs .skillBloc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,13 +156,13 @@ header #presentation {
   width: 280px;
   margin: 40px;
 }
-#skills .skillBlocs .skillBloc img {
+#skills-section .skillBlocs .skillBloc img {
   border-radius: 50%;
   margin: 20px;
 }
 
 /***** PROJECTS *****/
-#projects {
+#projects-section {
   background-color: #0D121C;
   color: white;
   display: flex;
@@ -171,14 +171,14 @@ header #presentation {
   align-items: center;
   padding: 80px 0;
 }
-#projects .projectBlocs {
+#projects-section .projectBlocs {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
   margin-bottom: 20px;
 }
-#projects .projectBlocs .projectBloc {
+#projects-section .projectBlocs .projectBloc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,36 +187,36 @@ header #presentation {
   width: 400px;
   margin: 30px 40px;
 }
-#projects .projectBlocs .projectBloc img {
+#projects-section .projectBlocs .projectBloc img {
   width: 400px;
   margin: 20px 10px 40px 10px;
   border-radius: 10px;
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 20px 0px;
 }
-#projects .projectBlocs .projectBloc img:hover {
+#projects-section .projectBlocs .projectBloc img:hover {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
   transition: 1s;
 }
 
 /***** CAREER *****/
-#career {
+#career-section {
   background-color: #0D121C;
   padding: 20px 0 40px 0;
 }
-#career h2 {
+#career-section h2 {
   color: white;
 }
-#career * {
+#career-section * {
   box-sizing: border-box;
 }
-#career .timeline {
+#career-section .timeline {
   position: relative;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 60px;
 }
-#career .timeline:after {
+#career-section .timeline:after {
   content: "";
   position: absolute;
   top: 20px;
@@ -227,17 +227,17 @@ header #presentation {
   border-radius: 3px;
   z-index: 1;
 }
-#career .timeline article {
+#career-section .timeline article {
   position: relative;
   background: #eeeeee;
   width: calc(50% - 40px);
   padding: 15px;
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 10px 0px;
 }
-#career .timeline article + article {
+#career-section .timeline article + article {
   margin-top: 20px;
 }
-#career .timeline article:before {
+#career-section .timeline article:before {
   content: "";
   display: block;
   position: absolute;
@@ -250,7 +250,7 @@ header #presentation {
   border-radius: 50%;
   z-index: 2;
 }
-#career .timeline article:after {
+#career-section .timeline article:after {
   content: "";
   position: absolute;
   top: 0;
@@ -261,33 +261,33 @@ header #presentation {
   border-left: 15px solid #eeeeee;
   border-bottom: 12px solid transparent;
 }
-#career .timeline article:nth-child(even) {
+#career-section .timeline article:nth-child(even) {
   margin-left: calc(50% + 45px);
 }
-#career .timeline article:nth-child(even):before {
+#career-section .timeline article:nth-child(even):before {
   left: auto;
   right: calc(100% + 32px);
 }
-#career .timeline article:nth-child(even):after {
+#career-section .timeline article:nth-child(even):after {
   left: auto;
   right: 100%;
   border-left: none;
   border-right: 16px solid #eeeeee;
 }
-#career .timeline article ul {
+#career-section .timeline article ul {
   margin: 0;
   padding: 0;
 }
-#career .timeline article li {
+#career-section .timeline article li {
   list-style: none;
   padding: 8px 0;
 }
-#career .timeline article li:not(:last-child) {
+#career-section .timeline article li:not(:last-child) {
   border-bottom: 1px #aaa solid;
 }
 
 /***** CV *****/
-#cv {
+#cv-section {
   background-image: url(../images/imageCode.jpg);
   background-position: center;
   background-size: cover;
@@ -296,7 +296,7 @@ header #presentation {
   align-items: center;
   position: relative;
 }
-#cv .cv {
+#cv-section .cv {
   height: 180px;
   width: 180px;
   border-radius: 50%;
@@ -308,7 +308,7 @@ header #presentation {
   margin: 60px;
   border-radius: 50%;
 }
-#cv .cv .cv-link {
+#cv-section .cv .cv-link {
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -317,7 +317,7 @@ header #presentation {
   opacity: 0.9;
   padding: 10px 20px;
 }
-#cv .cv .cv-link a {
+#cv-section .cv .cv-link a {
   font-size: 30px;
   font-weight: bold;
   color: #0D121C;
@@ -328,7 +328,7 @@ header #presentation {
 }
 
 /***** CONTACT *****/
-#contact-me {
+#contact-section {
   background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -341,7 +341,7 @@ header #presentation {
   align-items: center;
   padding: 100px 0;
 }
-#contact-me .custom-form {
+#contact-section .custom-form {
   background-color: #EDEAEB;
   opacity: 0.7;
   border: 1px solid #EDEAEB;
@@ -351,7 +351,7 @@ header #presentation {
   width: 800px;
   padding: 10px;
 }
-#contact-me #contact_agreeTerms {
+#contact-section #contact_agreeTerms {
   margin-left: 5px;
 }
 
@@ -498,4 +498,7 @@ footer .legals2 a {
   display: block;
   width: 500px;
   padding: 10px;
+}
+.mainIndex #projects_skills input {
+  margin: 0 10px;
 }/*# sourceMappingURL=style.css.map */

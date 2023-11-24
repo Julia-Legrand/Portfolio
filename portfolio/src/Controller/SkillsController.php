@@ -56,14 +56,6 @@ class SkillsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_skills_show', methods: ['GET'])]
-    public function show(Skills $skill): Response
-    {
-        return $this->render('skills/show.html.twig', [
-            'skill' => $skill,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_skills_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Skills $skill, EntityManagerInterface $entityManager): Response
     {

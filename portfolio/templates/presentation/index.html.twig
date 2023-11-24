@@ -1,43 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Presentation index{% endblock %}
+{% block title %}Présentation{% endblock %}
 
 {% block body %}
-    <h1>Presentation index</h1>
+<main class="mainIndex">
+    <h2>Présentation</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Wallpaper</th>
-                <th>Title</th>
-                <th>Cv</th>
-                <th>GithubLink</th>
-                <th>LinkedinLink</th>
-                <th>actions</th>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>CV</th>
+                <th>Github</th>
+                <th>LinkedIn</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for presentation in presentations %}
             <tr>
-                <td>{{ presentation.id }}</td>
-                <td>{{ presentation.wallpaper }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
                 <td>{{ presentation.title }}</td>
-                <td>{{ presentation.cv }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
                 <td>{{ presentation.githubLink }}</td>
                 <td>{{ presentation.linkedinLink }}</td>
                 <td>
-                    <a href="{{ path('app_presentation_show', {'id': presentation.id}) }}">show</a>
-                    <a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}">edit</a>
+                    <a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Donnée vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_presentation_new') }}">Create new</a>
+    <div class="buttons">
+        <a href="{{ path('admin') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

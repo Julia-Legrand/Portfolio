@@ -1,39 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projects index{% endblock %}
+{% block title %}Réalisations{% endblock %}
 
 {% block body %}
-    <h1>Projects index</h1>
+<main class="mainIndex">
+    <h2>Réalisations</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>ProjectPicture</th>
-                <th>ProjectTitle</th>
-                <th>ProjectText</th>
-                <th>actions</th>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for project in projects %}
             <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.projectPicture }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
                 <td>{{ project.projectTitle }}</td>
                 <td>{{ project.projectText }}</td>
                 <td>
-                    <a href="{{ path('app_projects_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('app_projects_edit', {'id': project.id}) }}">edit</a>
+                    <a href="{{ path('app_projects_edit', {'id': project.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Donnée vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_projects_new') }}">Create new</a>
+    <div class="buttons">
+        <a href="{{ path('app_projects_new') }}" class="btn">Ajouter</a>
+        <a href="{{ path('admin') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

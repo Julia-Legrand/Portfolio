@@ -45,14 +45,6 @@ class CareerController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_career_show', methods: ['GET'])]
-    public function show(Career $career): Response
-    {
-        return $this->render('career/show.html.twig', [
-            'career' => $career,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_career_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Career $career, EntityManagerInterface $entityManager): Response
     {

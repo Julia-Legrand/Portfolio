@@ -56,14 +56,6 @@ class ProjectsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_projects_show', methods: ['GET'])]
-    public function show(Projects $project): Response
-    {
-        return $this->render('projects/show.html.twig', [
-            'project' => $project,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_projects_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Projects $project, EntityManagerInterface $entityManager): Response
     {

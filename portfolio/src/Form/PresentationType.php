@@ -17,6 +17,7 @@ class PresentationType extends AbstractType
         $builder
             ->add('wallpaper',FileType::class, [
                 'label' => 'Fond d\'écran',
+                'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -28,10 +29,12 @@ class PresentationType extends AbstractType
                 ]
             ])
             ->add('title', TextType::class, [
-                'label' => 'Titre'
+                'label' => 'Titre',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('cv', FileType::class, [
                 'label' => 'CV',
+                'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -46,10 +49,12 @@ class PresentationType extends AbstractType
                 ]
             ])
             ->add('githubLink', TextType::class, [
-                'label' => 'Lien Github'
+                'label' => 'Lien Github',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('linkedinLink', TextType::class, [
-                'label' => 'Lien LinkedIn'
+                'label' => 'Lien LinkedIn',
+                'attr' => ['class' => 'custom-form'],
             ])
         ;
     }

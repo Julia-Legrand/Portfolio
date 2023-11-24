@@ -1,41 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Skills index{% endblock %}
+{% block title %}Domaines d'expertise{% endblock %}
 
 {% block body %}
-    <h1>Skills index</h1>
+<main class="mainIndex">
+    <h2>Domaines d'expertise</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>SkillPicture</th>
-                <th>SkillTitle</th>
-                <th>SkillText</th>
-                <th>SkillList</th>
-                <th>actions</th>
+                <th>Logo</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Liste</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for skill in skills %}
             <tr>
-                <td>{{ skill.id }}</td>
-                <td>{{ skill.skillPicture }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
                 <td>{{ skill.skillTitle }}</td>
                 <td>{{ skill.skillText }}</td>
                 <td>{{ skill.skillList }}</td>
                 <td>
-                    <a href="{{ path('app_skills_show', {'id': skill.id}) }}">show</a>
-                    <a href="{{ path('app_skills_edit', {'id': skill.id}) }}">edit</a>
+                    <a href="{{ path('app_skills_edit', {'id': skill.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Donnée vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_skills_new') }}">Create new</a>
+    <div class="buttons">
+        <a href="{{ path('app_skills_new') }}" class="btn">Ajouter</a>
+        <a href="{{ path('admin') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

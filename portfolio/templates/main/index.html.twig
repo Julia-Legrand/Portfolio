@@ -20,7 +20,7 @@
                 </div>
             </div>
         </nav>
-        <section id="presentation">
+        <section id="presentation-section">
             {% for presentation in presentations %}
                 <h1>Julia</h1>
                 <h1>{{ presentation.title }}</h1>
@@ -33,7 +33,7 @@
 
 <!--------------------A propos-------------------->
 
-    <section id="about-me">
+    <section id="about-section">
         {% for about in abouts %}
             <div class="aboutText">
                 <h2>A propos</h2>
@@ -47,7 +47,7 @@
 
 <!--------------------Domaines d'expertise-------------------->
 
-    <section id="skills">
+    <section id="skills-section">
         <h2>Domaines d'expertise</h2>
             <div class="skillBlocs">
                 {% for skill in skills %}
@@ -63,7 +63,7 @@
 
 <!--------------------Réalisations-------------------->
 
-    <section id="projects">
+    <section id="projects-section">
         <h2>Réalisations</h2>
         <div class="projectBlocs">
             {% for project in projects %}
@@ -81,7 +81,7 @@
 
 <!--------------------Parcours-------------------->
 
-    <section id="career">
+    <section id="career-section">
         <h2>Parcours</h2>
         <div class="timeline">
             {% for career in careers %}
@@ -99,7 +99,7 @@
 
 <!--------------------Télécharger le CV-------------------->
 
-    <section id="cv">
+    <section id="cv-section">
         <div class="cv">
             <div class="cv-link">
                 {% for presentation in presentations %}
@@ -111,7 +111,7 @@
 
 <!--------------------Contact-------------------->
 
-    <section id="contact-me">
+    <section id="contact-section">
         <h2>Contactez-moi</h2>
         {{ include('contact/_form.html.twig') }}
     </section>

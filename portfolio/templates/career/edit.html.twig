@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Career{% endblock %}
+{% block title %}Modifier Parcours{% endblock %}
 
 {% block body %}
-    <h1>Edit Career</h1>
+<main class="mainIndex">
+    <h2>Modifier</h2>
 
-    {{ include('career/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_career_index') }}">back to list</a>
-
-    {{ include('career/_delete_form.html.twig') }}
+    <div class="buttons">
+        {{ include('career/_form.html.twig', {'button_label': 'Valider'}) }}
+        {{ include('career/_delete_form.html.twig') }}
+    </div>
+    <a href="{{ path('app_career_index') }}" class="btn">Retour</a>
+</main>
 {% endblock %}

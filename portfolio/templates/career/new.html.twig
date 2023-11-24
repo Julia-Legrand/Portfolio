@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Career{% endblock %}
+{% block title %}Nouvelle expérience{% endblock %}
 
 {% block body %}
-    <h1>Create new Career</h1>
+<main class="mainIndex">
+    <h2>Ajouter</h2>
 
-    {{ include('career/_form.html.twig') }}
-
-    <a href="{{ path('app_career_index') }}">back to list</a>
+    <div class="buttons">
+        {{ include('career/_form.html.twig') }}
+        <a href="{{ path('app_career_index') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

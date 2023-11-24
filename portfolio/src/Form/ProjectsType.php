@@ -19,6 +19,7 @@ class ProjectsType extends AbstractType
         $builder
         ->add('projectPicture', FileType::class, [
             'label' => 'Illustration',
+            'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -30,13 +31,16 @@ class ProjectsType extends AbstractType
                 ]
             ])
             ->add('projectTitle', TextType::class, [
-                'label' => 'Titre du projet'
+                'label' => 'Titre du projet',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('projectText', TextType::class, [
-                'label' => 'Présentation'
+                'label' => 'Présentation',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('skills', EntityType::class, [
                 'class' => Skills::class,
+                'label' => 'Compétences :',
                 'choice_label' => 'skillTitle',
                 'multiple' => true,
                 'expanded' => true,

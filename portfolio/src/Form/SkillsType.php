@@ -17,6 +17,7 @@ class SkillsType extends AbstractType
         $builder
             ->add('skillPicture', FileType::class, [
                 'label' => 'Illustration',
+                'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,'constraints' => [
                     new File ([
@@ -27,13 +28,16 @@ class SkillsType extends AbstractType
                 ],
             ])
             ->add('skillTitle', TextType::class, [
-                'label' => 'Titre'
+                'label' => 'Titre',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('skillText', TextType::class, [
-                'label' => 'Texte'
+                'label' => 'Texte',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('skillList', TextType::class, [
-                'label' => 'Langages et outils'
+                'label' => 'Langages et outils',
+                'attr' => ['class' => 'custom-form'],
             ])
         ;
     }

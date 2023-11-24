@@ -1,43 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Career index{% endblock %}
+{% block title %}Parcours{% endblock %}
 
 {% block body %}
-    <h1>Career index</h1>
+<main class="mainIndex">
+    <h2>Parcours</h2>
 
-    <table class="table">
+    <table class="table" style="width: 80%;">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>CareerTitle</th>
-                <th>CareerCompany</th>
-                <th>CareerCity</th>
-                <th>StartDate</th>
-                <th>EndDate</th>
-                <th>actions</th>
+                <th>Titre</th>
+                <th>Entreprise/École</th>
+                <th>Ville</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for career in careers %}
             <tr>
-                <td>{{ career.id }}</td>
                 <td>{{ career.careerTitle }}</td>
                 <td>{{ career.careerCompany }}</td>
                 <td>{{ career.careerCity }}</td>
                 <td>{{ career.startDate }}</td>
                 <td>{{ career.endDate }}</td>
                 <td>
-                    <a href="{{ path('app_career_show', {'id': career.id}) }}">show</a>
-                    <a href="{{ path('app_career_edit', {'id': career.id}) }}">edit</a>
+                    <a href="{{ path('app_career_edit', {'id': career.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Donnée vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_career_new') }}">Create new</a>
+    <div class="buttons">
+        <a href="{{ path('app_career_new') }}" class="btn">Ajouter</a>
+        <a href="{{ path('admin') }}" class="btn">Retour</a>
+    </div>
+</main>
 {% endblock %}

@@ -17,21 +17,26 @@ class CareerType extends AbstractType
         $years = range(date('Y') - 20, date('Y') + 1);
         $builder
             ->add('careerTitle', TextType::class, [
-                'label' => 'Titre'
+                'label' => 'Titre',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('careerCompany', TextType::class, [
-                'label' => 'Entreprise ou École'
+                'label' => 'Entreprise ou École',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('careerCity', TextType::class, [
-                'label' => 'Ville'
+                'label' => 'Ville',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('startDate', ChoiceType::class, [
                 'choices' => array_combine($years, $years),
                 'label' => 'Année de début',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('endDate', ChoiceType::class, [
                 'choices' => array_combine($years, $years),
                 'label' => 'Année de fin',
+                'attr' => ['class' => 'custom-form'],
             ])
         ;
     }

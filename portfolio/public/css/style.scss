@@ -100,7 +100,7 @@ header {
         }
     }
 
-    #presentation {
+    #presentation-section {
         height: 80vh;
         margin-left: 40px;
         display: flex;
@@ -112,7 +112,7 @@ header {
 }
 
 /***** ABOUT *****/
-#about-me {
+#about-section {
     background-color: #0D121C;
     color: white;
     display: flex;
@@ -135,7 +135,7 @@ header {
 }
 
 /***** SKILLS *****/
-#skills {
+#skills-section {
     background-image: linear-gradient(rgba(1, 1, 1, 0.85), rgba(1, 1, 1, 0.85)), url(../images/imageCode2.jpg);
     background-attachment: fixed;
     color: white;
@@ -169,7 +169,7 @@ header {
 }
 
 /***** PROJECTS *****/
-#projects {
+#projects-section {
     background-color: #0D121C;
     color: white;
     display: flex;
@@ -210,7 +210,7 @@ header {
 }
 
 /***** CAREER *****/
-#career {
+#career-section {
     background-color: #0D121C;
     padding: 20px 0 40px 0;
 
@@ -312,7 +312,7 @@ header {
 }
 
 /***** CV *****/
-#cv {
+#cv-section {
     background-image: url(../images/imageCode.jpg);
     background-position: center;
     background-size: cover;
@@ -356,7 +356,7 @@ header {
 }
 
 /***** CONTACT *****/
-#contact-me {
+#contact-section {
     background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -551,5 +551,9 @@ footer {
             width: 500px;
             padding: 10px;
         }
+    }
+
+    #projects_skills input {
+        margin: 0 10px;
     }
 }
