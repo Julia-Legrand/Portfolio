@@ -201,11 +201,17 @@ h3::after {
   box-shadow: #f4eff3 1px 0 5px;
 }
 
+h4 {
+  font-family: "Alata", sans-serif;
+  font-size: 18px;
+}
+
 p,
 a,
 small,
 label,
-select {
+select,
+li {
   font-family: "Montserrat", sans-serif;
 }
 

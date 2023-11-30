@@ -39,11 +39,16 @@ h3::after {
     box-shadow: #f4eff3 1px 0 5px;
 }
 
+h4 {
+    @include title4;
+}
+
 p,
 a,
 small,
 label,
-select {
+select,
+li {
     @include paragraph;
 }
 

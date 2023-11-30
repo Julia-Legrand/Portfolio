@@ -18,6 +18,11 @@
     text-align: center;
 }
 
+@mixin title4 {
+    font-family: 'Alata', sans-serif;
+    font-size: 18px;
+}
+
 @mixin paragraph {
     font-family: 'Montserrat', sans-serif;
 }

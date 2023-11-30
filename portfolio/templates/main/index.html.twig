@@ -31,7 +31,7 @@
 
 {% block body %}
 
-<!--------------------A propos-------------------->
+    <!--A propos-->
 
     <section id="about-section">
         {% for about in abouts %}
@@ -40,19 +40,19 @@
                 <p>{{ about.aboutText }}</p>
             </div>
             <div class="aboutPicture">
-                <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}">
+                <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
             </div>
         {% endfor %}
     </section>
 
-<!--------------------Domaines d'expertise-------------------->
+    <!--Domaines d'expertise-->
 
     <section id="skills-section">
         <h2>Domaines d'expertise</h2>
             <div class="skillBlocs">
                 {% for skill in skills %}
                     <div class="skillBloc">
-                        <img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}">
+                        <img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" alt="logo compétences">
                         <h3>{{ skill.skillTitle }}</h3>
                         <p>{{ skill.skillText }}</p>
                         <p><strong>{{ skill.skillList }}</strong></p>
@@ -61,14 +61,14 @@
             </div>
     </section>
 
-<!--------------------Réalisations-------------------->
+    <!--Réalisations-->
 
     <section id="projects-section">
         <h2>Réalisations</h2>
         <div class="projectBlocs">
             {% for project in projects %}
                 <div class="projectBloc">
-                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}">
+                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran projet">
                     <h3>{{ project.projectTitle }}</h3>
                     <p>{{ project.projectText }}</p>
                     {% for skill in project.skills %}
@@ -79,14 +79,14 @@
         </div>
     </section>
 
-<!--------------------Parcours-------------------->
+    <!--Parcours-->
 
     <section id="career-section">
         <h2>Parcours</h2>
         <div class="timeline">
             {% for career in careers %}
-                <article>
-                    <p><strong>{{ career.careerTitle }}</strong></p>
+                <article class="career-article">
+                    <h4>{{ career.careerTitle }}</h4>
                     <ul>
                         <li>{{ career.careerCompany }}</li>
                         <li>{{ career.careerCity }}</li>
@@ -97,7 +97,7 @@
         </div> 
     </section>
 
-<!--------------------Télécharger le CV-------------------->
+    <!--Télécharger le CV-->
 
     <section id="cv-section">
         <div class="cv">
@@ -109,7 +109,7 @@
         </div>
     </section>
 
-<!--------------------Contact-------------------->
+    <!--Contact-->
 
     <section id="contact-section">
         <h2>Contact</h2>
