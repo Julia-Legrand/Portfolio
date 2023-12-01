@@ -72,7 +72,7 @@
                     <h3>{{ project.projectTitle }}</h3>
                     <p>{{ project.projectText }}</p>
                     {% for skill in project.skills %}
-                        <small>{{ skill.skillTitle }}</small>
+                        <span class="skillsList">{{ skill.skillList }}</span>
                     {% endfor %}
                 </div>
             {% endfor %}

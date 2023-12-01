@@ -57,12 +57,25 @@ class ProjectsController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_projects_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Projects $project, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Projects $project, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(ProjectsType::class, $project);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('projectPicture')->getData();
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+        
+                $imageFile->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+        
+                $project->setProjectPicture($newFilename);
+            }
             $entityManager->flush();
 
             return $this->redirectToRoute('app_projects_index', [], Response::HTTP_SEE_OTHER);

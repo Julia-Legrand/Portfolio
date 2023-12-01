@@ -29,9 +29,16 @@ class Projects
     #[ORM\ManyToMany(targetEntity: Skills::class, inversedBy: 'projects')]
     private Collection $skills;
 
+    #[ORM\OneToMany(mappedBy: 'projects', targetEntity: Pictures::class)]
+    private Collection $pictures;
+
+    #[ORM\Column(length: 100)]
+    private ?string $github = null;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,6 +102,48 @@ class Projects
     public function removeSkill(Skills $skill): static
     {
         $this->skills->removeElement($skill);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Pictures>
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Pictures $picture): static
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures->add($picture);
+            $picture->setProjects($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Pictures $picture): static
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getProjects() === $this) {
+                $picture->setProjects(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(string $github): static
+    {
+        $this->github = $github;
 
         return $this;
     }

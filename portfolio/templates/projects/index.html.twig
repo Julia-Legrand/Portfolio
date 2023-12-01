@@ -12,6 +12,7 @@
                 <th>Image</th>
                 <th>Titre</th>
                 <th>Description</th>
+                <th>Github</th>
                 <th>Modifier</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
                 <td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
                 <td>{{ project.projectTitle }}</td>
                 <td>{{ project.projectText }}</td>
+                <td>{{ project.github }}</td>
                 <td>
                     <a href="{{ path('app_projects_edit', {'id': project.id}) }}"><i class="fa-solid fa-pen"></i></a>
                 </td>

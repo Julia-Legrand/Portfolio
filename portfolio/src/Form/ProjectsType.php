@@ -44,7 +44,11 @@ class ProjectsType extends AbstractType
                 'choice_label' => 'skillTitle',
                 'multiple' => true,
                 'expanded' => true,
-                ])
+            ])
+            ->add('github', TextType::class, [
+                'label' => 'Lien Github',
+                'attr' => ['class' => 'custom-form'],
+            ])
         ;
     }
 

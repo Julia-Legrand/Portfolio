@@ -8,6 +8,7 @@ use App\Repository\AboutRepository;
 use App\Repository\CareerRepository;
 use App\Repository\SkillsRepository;
 use App\Repository\ContactRepository;
+use App\Repository\PicturesRepository;
 use App\Repository\ProjectsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PresentationRepository;
@@ -21,7 +22,7 @@ class MainController extends AbstractController
 {
     
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
-    public function index(Request $request, EntityManagerInterface $entityManager, AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository): Response
+    public function index(Request $request, EntityManagerInterface $entityManager, AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, PicturesRepository $picturesRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -41,13 +42,25 @@ class MainController extends AbstractController
             'presentations' => $presentationRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'projects' => $projectsRepository->findAll(),
-            'careers' => $careerRepository->findAll(),  
+            'careers' => $careerRepository->findAll(), 
+            'pictures' => $picturesRepository->findAll(),
+        ]);
+    }
+
+    #[IsGranted('ROLE_USER')]
+    #[Route('/projets', name: 'projects')]
+    public function projects(SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, PicturesRepository $picturesRepository): Response
+    {
+        return $this->render('main/admin.html.twig', [
+            'skills' => $skillsRepository->findAll(),
+            'projects' => $projectsRepository->findAll(),
+            'pictures' => $picturesRepository->findAll(),
         ]);
     }
 
     #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]
-    public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, ContactRepository $contactRepository): Response
+    public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, ContactRepository $contactRepository, PicturesRepository $picturesRepository): Response
     {
         return $this->render('main/admin.html.twig', [
             'abouts' => $aboutRepository->findAll(),
@@ -56,6 +69,7 @@ class MainController extends AbstractController
             'projects' => $projectsRepository->findAll(),
             'careers' => $careerRepository->findAll(),
             'contacts' => $contactRepository->findAll(),
+            'pictures' => $picturesRepository->findAll(),
         ]);
     }
 

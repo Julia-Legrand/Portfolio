@@ -211,7 +211,8 @@ a,
 small,
 label,
 select,
-li {
+li,
+span {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -264,7 +265,7 @@ header .navbar-nav a:hover:after {
   background: white;
 }
 header #presentation-section {
-  margin-top: 200px;
+  margin-top: 350px;
   margin-left: 40px;
   display: flex;
   flex-direction: column;
@@ -350,6 +351,9 @@ header #presentation-section {
   width: 400px;
   margin: 30px 40px;
 }
+#projects-section .projectBlocs .projectBloc .skillsList {
+  display: none;
+}
 #projects-section .projectBlocs .projectBloc img {
   width: 400px;
   margin: 20px 10px 40px 10px;
@@ -359,6 +363,9 @@ header #presentation-section {
 #projects-section .projectBlocs .projectBloc img:hover {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
   transition: 1s;
+}
+#projects-section .projectBlocs .projectBloc img:hover + h3 + p + .skillsList {
+  display: inline-block;
 }
 
 /***** CAREER *****/

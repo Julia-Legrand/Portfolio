@@ -7,19 +7,16 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav ml-auto">
             {% if app.user %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('home') }}"><i class="fa-solid fa-house"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
-                </a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_login') }}"><i class="fa-regular fa-user"></i>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('home') }}">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </li>
             {% endif %}
         </ul>
     </nav>
@@ -34,25 +31,34 @@
                 <div class="collapse navbar-collapse">
                     <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('home') }}"><i class="fa-solid fa-house"></i> Page d'accueil</a>
+                            <a class="nav-link" href="{{ path('app_presentation_index') }}">
+                                <i class="fa-solid fa-user"></i>
+                                Présentation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_presentation_index') }}"><i class="fa-solid fa-user"></i> Présentation</a>
+                            <a class="nav-link" href="{{ path('app_about_index') }}">
+                                <i class="fa-solid fa-question"></i>
+                                A propos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_about_index') }}"><i class="fa-solid fa-question"></i> A propos</a>
+                            <a class="nav-link" href="{{ path('app_skills_index') }}">
+                                <i class="fa-solid fa-code"></i>
+                                Domaines d'expertise</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_skills_index') }}"><i class="fa-solid fa-code"></i> Domaines d'expertise</a>
+                            <a class="nav-link" href="{{ path('app_projects_index') }}">
+                                <i class="fa-solid fa-display"></i>
+                                Réalisations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_projects_index') }}"><i class="fa-solid fa-display"></i> Réalisations</a>
+                            <a class="nav-link" href="{{ path('app_career_index') }}">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Parcours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_career_index') }}"><i class="fa-solid fa-graduation-cap"></i> Parcours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_contact_index') }}"><i class="fa-regular fa-message"></i> Contact</a>
+                            <a class="nav-link" href="{{ path('app_contact_index') }}">
+                                <i class="fa-regular fa-message"></i>
+                                Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -76,13 +82,34 @@
                                 </thead>
                                 <tbody>
                                     {% for presentation in presentations %}
+                                        <tr>
+                                            <td><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
+                                            <td>{{ presentation.title }}</td>
+                                            <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
+                                            <td>{{ presentation.githubLink }}</td>
+                                            <td>{{ presentation.linkedinLink }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <h3>Contacts</h3>
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
-                                        <td>{{ presentation.title }}</td>
-                                        <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
-                                        <td>{{ presentation.githubLink }}</td>
-                                        <td>{{ presentation.linkedinLink }}</td>
+                                        <th>Nom</th>
+                                        <th>Email</th>
+                                        <th>Message</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    {% for contact in contacts %}
+                                        <tr>
+                                            <td>{{ contact.contactName }}</td>
+                                            <td>{{ contact.contactEmail }}</td>
+                                            <td>{{ contact.contactMessage }}</td>
+                                        </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
@@ -103,10 +130,10 @@
                                 </thead>
                                 <tbody>
                                     {% for about in abouts %}
-                                    <tr>
-                                        <td>{{ about.aboutText }}</td>
-                                        <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80px"></td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{ about.aboutText }}</td>
+                                            <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80px"></td>
+                                        </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
@@ -129,12 +156,12 @@
                                 </thead>
                                 <tbody>
                                     {% for skill in skills %}
-                                    <tr>
-                                        <td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
-                                        <td>{{ skill.skillTitle }}</td>
-                                        <td>{{ skill.skillText }}</td>
-                                        <td>{{ skill.skillList }}</td>
-                                    </tr>
+                                        <tr>
+                                            <td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
+                                            <td>{{ skill.skillTitle }}</td>
+                                            <td>{{ skill.skillText }}</td>
+                                            <td>{{ skill.skillList }}</td>
+                                        </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
@@ -144,7 +171,7 @@
             </div>
 
             <div class="row mr-0 ml-0">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
                             <h3>Réalisations</h3>
@@ -154,23 +181,25 @@
                                         <th>Image</th>
                                         <th>Titre</th>
                                         <th>Description</th>
+                                        <th>Github</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for project in projects %}
-                                    <tr>
-                                        <td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
-                                        <td>{{ project.projectTitle }}</td>
-                                        <td>{{ project.projectText }}</td>
-                                    </tr>
-                                {% endfor %}
+                                    {% for project in projects %}
+                                        <tr>
+                                            <td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
+                                            <td>{{ project.projectTitle }}</td>
+                                            <td>{{ project.projectText }}</td>
+                                            <td>{{ project.github }}</td>
+                                        </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
                             <h3>Parcours</h3>
@@ -185,41 +214,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for career in careers %}
-                                    <tr>
-                                        <td>{{ career.careerTitle }}</td>
-                                        <td>{{ career.careerCompany }}</td>
-                                        <td>{{ career.careerCity }}</td>
-                                        <td>{{ career.startDate }}</td>
-                                        <td>{{ career.endDate }}</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Contacts</h3>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Nom</th>
-                                        <th>Email</th>
-                                        <th>Message</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {% for contact in contacts %}
-                                    <tr>
-                                        <td>{{ contact.contactName }}</td>
-                                        <td>{{ contact.contactEmail }}</td>
-                                        <td>{{ contact.contactMessage }}</td>
-                                    </tr>
-                                {% endfor %}
+                                    {% for career in careers %}
+                                        <tr>
+                                            <td>{{ career.careerTitle }}</td>
+                                            <td>{{ career.careerCompany }}</td>
+                                            <td>{{ career.careerCity }}</td>
+                                            <td>{{ career.startDate }}</td>
+                                            <td>{{ career.endDate }}</td>
+                                        </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
