@@ -38,8 +38,6 @@ class PicturesType extends AbstractType
                 'class' => Projects::class,
                 'label' => 'Projet :',
                 'choice_label' => 'projectTitle',
-                'multiple' => true,
-                'expanded' => true,
             ])
         ;
     }

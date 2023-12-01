@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Pictures{% endblock %}
+{% block title %}Nouvelle image{% endblock %}
 
 {% block body %}
-    <h1>Create new Pictures</h1>
+<main class="mainIndex">
+    <h2>Ajouter</h2>
 
-    {{ include('pictures/_form.html.twig') }}
-
-    <a href="{{ path('app_pictures_index') }}">back to list</a>
+    <div class="buttons">
+        {{ include('pictures/_form.html.twig') }}
+        <a href="{{ path('app_pictures_index') }}" class="btn">Retour</a>
+     </div>
+</main>
 {% endblock %}
