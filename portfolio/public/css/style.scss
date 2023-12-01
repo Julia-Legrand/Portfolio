@@ -139,6 +139,35 @@ header {
         border-radius: 50%;
         margin: 60px 0;
     }
+
+    .aboutText,
+    .aboutPicture {
+        opacity: 0;
+        transform: translateX(0);
+        /* Initial position */
+        transition: opacity 0.8s ease, transform 1s ease;
+    }
+
+    .animate-from-left {
+        transform-origin: left center;
+    }
+
+    .animate-from-right {
+        transform-origin: right center;
+    }
+
+    .animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .aboutText.animated {
+        transform: translateX(10%);
+    }
+
+    .aboutPicture.animated {
+        transform: translateX(-30%);
+    }
 }
 
 /***** SKILLS *****/
@@ -214,8 +243,8 @@ header {
                 box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
             }
 
-            img:hover + h3 + .textProject,
-            img:hover + h3 + .textProject + .skillsList {
+            img:hover+h3+.textProject,
+            img:hover+h3+.textProject+.skillsList {
                 opacity: 1;
                 transform: translateY(0);
                 transition: opacity 0.5s, transform 0.5s;
