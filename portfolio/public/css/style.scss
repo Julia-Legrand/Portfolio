@@ -193,7 +193,6 @@ header {
         margin-bottom: 20px;
 
         .projectBloc {
-            position: relative; /* Ajout de cette propriété */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -201,38 +200,37 @@ header {
             text-align: center;
             width: 400px;
             margin: 30px 40px;
-
-            .textProject {
-                display: none;
-            }
-
-            .skillsList {
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                opacity: 0; /* Rendre initialement invisible */
-                transition: opacity 0.3s ease-in-out;
-            }
+            position: relative;
 
             img {
                 width: 400px;
                 margin: 20px 10px 40px 10px;
                 border-radius: 10px;
                 box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 20px 0px;
+                transition: box-shadow 1s;
             }
 
             img:hover {
                 box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
-                transition: 1s;
             }
 
-            img:hover + h3 + .skillsList {
-                opacity: 1; /* Rendre visible au survol de l'image */
+            img:hover + h3 + .textProject,
+            img:hover + h3 + .textProject + .skillsList {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity 0.5s, transform 0.5s;
             }
 
-            img:hover .textProject {
-                display: none;
+            .textProject,
+            .skillsList {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s, transform 0.5s;
+            }
+
+            .skillsList strong {
+                font-size: 18px;
+                font-family: 'Alata', sans-serif;
             }
         }
     }
