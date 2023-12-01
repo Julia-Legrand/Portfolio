@@ -182,16 +182,18 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 80px 0;
+    padding: 80px 40px;
 
     .projectBlocs {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: start;
         margin-bottom: 20px;
 
         .projectBloc {
+            position: relative; /* Ajout de cette propriété */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -200,8 +202,17 @@ header {
             width: 400px;
             margin: 30px 40px;
 
-            .skillsList {
+            .textProject {
                 display: none;
+            }
+
+            .skillsList {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0; /* Rendre initialement invisible */
+                transition: opacity 0.3s ease-in-out;
             }
 
             img {
@@ -216,8 +227,12 @@ header {
                 transition: 1s;
             }
 
-            img:hover + h3 + p + .skillsList {
-                display: inline-block;
+            img:hover + h3 + .skillsList {
+                opacity: 1; /* Rendre visible au survol de l'image */
+            }
+
+            img:hover .textProject {
+                display: none;
             }
         }
     }
@@ -337,6 +352,7 @@ header {
 /***** CV *****/
 #cv-section {
     background-image: url(../images/imageCode.jpg);
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -355,7 +371,6 @@ header {
         align-items: center;
         margin: 60px;
         border-radius: 50%;
-        transition: transform 1s ease-in-out;
 
         .cv-link {
             z-index: 1;

@@ -1,29 +1,4 @@
 /*************** INDEX ***************/
-@media all and (max-width:1400px) {
-
-    /***** PROJECTS *****/
-    #projects-section {
-        .projectBloc {
-            width: 300px !important;
-
-            img {
-                width: 300px !important;
-            }
-        }
-    }
-}
-
-@media all and (max-width:1070px) {
-
-    /***** PROJECTS *****/
-    #projects-section {
-        .projectBlocs {
-            flex-direction: column !important;
-            justify-content: space-evenly;
-            align-items: center !important;
-        }
-    }
-}
 
 @media all and (max-width:800px) {
 

@@ -1,18 +1,4 @@
-// Rotation du CV au survol de la souris
-
-document.addEventListener('DOMContentLoaded', function() {
-    const cvDiv = document.querySelector('.cv');
-
-    cvDiv.addEventListener('mouseenter', function() {
-        cvDiv.classList.add('rotate-on-hover');
-    });
-
-    cvDiv.addEventListener('mouseleave', function() {
-        cvDiv.classList.remove('rotate-on-hover');
-    });
-});
-
-// Animation pour faire apparaître les articles de la timeline au fur et à mesure du scroll
+// Animation to progressively reveal timeline articles as you scroll
 document.addEventListener('DOMContentLoaded', function() {
     const timelineArticles = document.querySelectorAll('.timeline article');
     
@@ -34,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Ajouter un écouteur de scroll
+    // Add a scroll listener
     window.addEventListener('scroll', handleScroll);
 
-    // Appeler la fonction au chargement initial
+    // Calling the function on initial load
     handleScroll();
 });

@@ -70,7 +70,7 @@
                 <div class="projectBloc">
                     <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran projet">
                     <h3>{{ project.projectTitle }}</h3>
-                    <p>{{ project.projectText }}</p>
+                    <p class="textProject">{{ project.projectText }}</p>
                     {% for skill in project.skills %}
                         <span class="skillsList">{{ skill.skillList }}</span>
                     {% endfor %}

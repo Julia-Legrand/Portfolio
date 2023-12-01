@@ -1,21 +1,5 @@
+@charset "UTF-8";
 /*************** INDEX ***************/
-@media all and (max-width: 1400px) {
-  /***** PROJECTS *****/
-  #projects-section .projectBloc {
-    width: 300px !important;
-  }
-  #projects-section .projectBloc img {
-    width: 300px !important;
-  }
-}
-@media all and (max-width: 1070px) {
-  /***** PROJECTS *****/
-  #projects-section .projectBlocs {
-    flex-direction: column !important;
-    justify-content: space-evenly;
-    align-items: center !important;
-  }
-}
 @media all and (max-width: 800px) {
   /***** ABOUT *****/
   #about-section {
@@ -333,16 +317,18 @@ header #presentation-section {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px 0;
+  padding: 80px 40px;
 }
 #projects-section .projectBlocs {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
   margin-bottom: 20px;
 }
 #projects-section .projectBlocs .projectBloc {
+  position: relative; /* Ajout de cette propriété */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -351,8 +337,16 @@ header #presentation-section {
   width: 400px;
   margin: 30px 40px;
 }
-#projects-section .projectBlocs .projectBloc .skillsList {
+#projects-section .projectBlocs .projectBloc .textProject {
   display: none;
+}
+#projects-section .projectBlocs .projectBloc .skillsList {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Rendre initialement invisible */
+  transition: opacity 0.3s ease-in-out;
 }
 #projects-section .projectBlocs .projectBloc img {
   width: 400px;
@@ -364,8 +358,11 @@ header #presentation-section {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
   transition: 1s;
 }
-#projects-section .projectBlocs .projectBloc img:hover + h3 + p + .skillsList {
-  display: inline-block;
+#projects-section .projectBlocs .projectBloc img:hover + h3 + .skillsList {
+  opacity: 1; /* Rendre visible au survol de l'image */
+}
+#projects-section .projectBlocs .projectBloc img:hover .textProject {
+  display: none;
 }
 
 /***** CAREER *****/
@@ -467,6 +464,7 @@ header #presentation-section {
 /***** CV *****/
 #cv-section {
   background-image: url(../images/imageCode.jpg);
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -485,7 +483,6 @@ header #presentation-section {
   align-items: center;
   margin: 60px;
   border-radius: 50%;
-  transition: transform 1s ease-in-out;
 }
 #cv-section .cv .cv-link {
   z-index: 1;
