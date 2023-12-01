@@ -11,11 +11,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="monMenu">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#about">A propos</a>
-                        <a class="nav-item nav-link" href="#skills">Domaines d'expertise</a>
-                        <a class="nav-item nav-link" href="#projects">Réalisations</a>
-                        <a class="nav-item nav-link" href="#career">Parcours</a>
-                        <a class="nav-item nav-link" href="#contact">Contact</a>
+                        <a class="nav-item nav-link" href="#about-section">A propos</a>
+                        <a class="nav-item nav-link" href="#skills-section">Domaines d'expertise</a>
+                        <a class="nav-item nav-link" href="#projects-section">Réalisations</a>
+                        <a class="nav-item nav-link" href="#career-section">Parcours</a>
+                        <a class="nav-item nav-link" href="#contact-section">Contact</a>
                     </div>
                 </div>
             </div>
@@ -35,11 +35,11 @@
 
     <section id="about-section">
     {% for about in abouts %}
-        <div class="aboutText animate-from-left">
+        <div class="aboutText">
             <h2>A propos</h2>
             <p>{{ about.aboutText }}</p>
         </div>
-        <div class="aboutPicture animate-from-right">
+        <div class="aboutPicture">
             <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
         </div>
     {% endfor %}
@@ -73,6 +73,7 @@
                     <span class="textProject">{{ project.projectText }}</span>
                     {% for skill in project.skills %}
                         <span class="skillsList"><strong>{{ skill.skillList }}</strong></span>
+                        <span class="githubLink">{{ project.github }}</span>
                     {% endfor %}
                 </div>
             {% endfor %}

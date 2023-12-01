@@ -1,17 +1,28 @@
 /*************** INDEX ***************/
+@media all and (max-width:1320px) {
+    /***** ABOUT *****/
+    #about-section {
+        .aboutText {
+            width: 500px !important;
+        }
+    }
+}
 
-@media all and (max-width:800px) {
-
+@media all and (max-width:1130px) {
     /***** ABOUT *****/
     #about-section {
         flex-direction: column;
-        padding: 60px 20px !important;
+        justify-content: center;
+        align-items: center;
 
         .aboutText {
-            width: 500px !important;
-            margin: 50px 30px !important;
+            margin: 30px !important;
+            width: 80% !important;
         }
     }
+}
+
+@media all and (max-width:800px) {
 
     /***** SKILLS *****/
     #skills-section {
@@ -36,12 +47,12 @@
     /***** HEADER *****/
     header {
         #presentation-section {
-            margin-top: 250px !important;
+            margin-top: 30% !important;
             margin-left: 0 !important;
             align-items: center !important;
 
             h1 {
-                font-size: 70px;
+                font-size: 80px;
             }
         }
     }
@@ -162,7 +173,7 @@
     /***** ABOUT *****/
     #about-section {
         .aboutPicture img {
-            width: 250px;
+            width: 250px !important;
             height: auto;
             margin: 20px 0 60px 0 !important;
         }
