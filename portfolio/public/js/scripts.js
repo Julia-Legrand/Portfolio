@@ -34,21 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
     projectBlocks.forEach(function (block) {
         var projectImage = block.querySelector('img');
         var printScreenImage = block.querySelector('.printScreen img');
-        var overlay = document.createElement('div');
 
         // Au départ, cacher l'image de la classe printScreen
         printScreenImage.style.display = 'none';
-
-        // Créer l'overlay noir
-        overlay.className = 'overlay';
-        document.body.appendChild(overlay);
 
         // Gestion du clic sur l'image projectPicture
         projectImage.addEventListener('click', function () {
             // Afficher l'image de la classe printScreen en plein écran
             printScreenImage.style.display = 'block';
             printScreenImage.classList.add('fullscreen');
-            overlay.style.display = 'block';
         });
 
         // Gestion du clic en dehors de l'image
@@ -61,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Si l'image est en plein écran et le clic est en dehors, la cacher
                 printScreenImage.classList.remove('fullscreen');
                 printScreenImage.style.display = 'none';
-                overlay.style.display = 'none';
             }
         });
 
@@ -69,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
         printScreenImage.addEventListener('transitionend', function () {
             if (!printScreenImage.classList.contains('fullscreen')) {
                 projectImage.style.display = 'block';
-                overlay.style.display = 'none';
             }
         });
     });
