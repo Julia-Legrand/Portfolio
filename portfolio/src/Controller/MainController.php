@@ -46,18 +46,7 @@ class MainController extends AbstractController
             'pictures' => $picturesRepository->findAll(),
         ]);
     }
-
-    #[IsGranted('ROLE_USER')]
-    #[Route('/projets', name: 'projects')]
-    public function projects(SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, PicturesRepository $picturesRepository): Response
-    {
-        return $this->render('main/admin.html.twig', [
-            'skills' => $skillsRepository->findAll(),
-            'projects' => $projectsRepository->findAll(),
-            'pictures' => $picturesRepository->findAll(),
-        ]);
-    }
-
+    
     #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]
     public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, ContactRepository $contactRepository, PicturesRepository $picturesRepository): Response

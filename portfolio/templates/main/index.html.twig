@@ -68,11 +68,25 @@
         <div class="projectBlocs">
             {% for project in projects %}
                 <div class="projectBloc">
-                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran projet">
-                    <h3>{{ project.projectTitle }}</h3>
+                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran du projet">
+
+                    {% for picture in project.pictures %}
+                        <span class="printScreen">
+                            <img src="{{ asset('uploads/images/' ~ picture.picture) }}">
+                        </span>
+                    {% endfor %}
+
+                    <div class="projectTitle">
+                        <h3>{{ project.projectTitle }}</h3>
+                        {% if project.github %}
+                            <a href="{{ project.github }}"><i class="fa-brands fa-github"></i></a>
+                        {% endif %}
+                    </div>
+
                     <span class="textProject">{{ project.projectText }}</span>
+
                     {% for skill in project.skills %}
-                        <span class="skillsList"><strong>{{ skill.skillList }}</strong></span>
+                        <span class="skillsList"><strong>{{ skill.skillTitle }}</strong></span>
                     {% endfor %}
                 </div>
             {% endfor %}
