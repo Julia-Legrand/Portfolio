@@ -183,10 +183,17 @@
     #projects-section {
         .projectBloc {
             width: 280px !important;
+            margin: 20px 0;
 
             img {
                 width: 280px !important;
             }
+        }
+        .printScreen img.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 47%;
+            height: auto;
         }
     }
 

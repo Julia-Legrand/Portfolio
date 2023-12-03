@@ -132,9 +132,16 @@
   /***** PROJECTS *****/
   #projects-section .projectBloc {
     width: 280px !important;
+    margin: 20px 0;
   }
   #projects-section .projectBloc img {
     width: 280px !important;
+  }
+  #projects-section .printScreen img.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 47%;
+    height: auto;
   }
   /***** CAREER *****/
   #career-section .timeline article {
@@ -401,7 +408,7 @@ header #presentation-section {
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  height: 98vh;
+  height: 100%;
   z-index: 9999;
   border-radius: 0;
   box-shadow: none;
