@@ -335,6 +335,14 @@ header #presentation-section {
   align-items: center;
   padding: 80px 40px;
 }
+#projects-section .skillsList ul {
+  list-style: none;
+  padding: 0;
+}
+#projects-section .skillsList li {
+  padding-left: 20px;
+  text-indent: -20px;
+}
 
 .projectBlocs {
   display: flex;
@@ -702,7 +710,7 @@ footer .legals2 a {
   padding-top: 50px;
 }
 .mainIndex .table {
-  width: 700px;
+  width: 80%;
 }
 .mainIndex .table th,
 .mainIndex .table td {

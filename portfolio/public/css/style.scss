@@ -184,6 +184,16 @@ header {
     justify-content: space-evenly;
     align-items: center;
     padding: 80px 40px;
+
+    .skillsList ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .skillsList li {
+        padding-left: 20px;
+        text-indent: -20px;
+    }
 }
 
 .projectBlocs {
@@ -204,17 +214,19 @@ header {
     width: 400px;
     margin: 30px 40px;
     position: relative;
-        .projectTitle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-                i {
-                    color: white;
-                    margin-left: 20px;
-                    margin-bottom: 60px;
-                    font-size: 30px;
-                }
+
+    .projectTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 60px;
+            font-size: 30px;
         }
+    }
 }
 
 .projectBloc img {
@@ -236,8 +248,8 @@ header {
     transition: opacity 0.5s, transform 0.5s;
 }
 
-.projectBloc:hover .projectTitle + .textProject,
-.projectBloc:hover .projectTitle + .textProject + .skillsList {
+.projectBloc:hover .projectTitle+.textProject,
+.projectBloc:hover .projectTitle+.textProject+.skillsList {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s, transform 0.5s;
@@ -589,7 +601,7 @@ footer {
     padding-top: 50px;
 
     .table {
-        width: 700px;
+        width: 80%;
 
         th,
         td {
