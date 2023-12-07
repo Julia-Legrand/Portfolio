@@ -3,7 +3,7 @@
     /***** ABOUT *****/
     #about-section {
         .aboutText {
-            width: 500px !important;
+            width: 450px !important;
         }
     }
 }
@@ -18,6 +18,14 @@
         .aboutText {
             margin: 30px !important;
             width: 80% !important;
+        }
+
+        .aboutText,
+        .aboutPicture {
+            opacity: 1 !important;
+            transform: none !important;
+            /* Initial position */
+            transition: none !important;
         }
     }
 }

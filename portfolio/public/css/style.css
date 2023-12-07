@@ -2,7 +2,7 @@
 @media all and (max-width: 1320px) {
   /***** ABOUT *****/
   #about-section .aboutText {
-    width: 500px !important;
+    width: 450px !important;
   }
 }
 @media all and (max-width: 1130px) {
@@ -15,6 +15,13 @@
   #about-section .aboutText {
     margin: 30px !important;
     width: 80% !important;
+  }
+  #about-section .aboutText,
+  #about-section .aboutPicture {
+    opacity: 1 !important;
+    transform: none !important;
+    /* Initial position */
+    transition: none !important;
   }
 }
 @media all and (max-width: 800px) {
@@ -278,7 +285,7 @@ header #presentation-section {
   background-color: #0D121C;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 80px 0;
 }
@@ -293,6 +300,26 @@ header #presentation-section {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 30px 0px;
   border-radius: 50%;
   margin: 60px;
+}
+#about-section .aboutText,
+#about-section .aboutPicture {
+  opacity: 0;
+  transform: translateX(100);
+  /* Initial position */
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+#about-section .animate-from-left {
+  transform-origin: left center;
+}
+#about-section .animate-from-right {
+  transform-origin: right center;
+}
+#about-section .animated {
+  opacity: 1 !important;
+  transform: translateX(10%) !important;
+}
+#about-section .aboutPicture.animated {
+  transform: translateX(-10%) !important;
 }
 
 /***** SKILLS *****/

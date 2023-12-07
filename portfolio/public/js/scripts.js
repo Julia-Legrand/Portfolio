@@ -1,3 +1,46 @@
+// Animation to bring the two divs closer together on scroll in the about-section
+document.addEventListener('DOMContentLoaded', function () {
+    var textElements = document.querySelectorAll('.aboutText');
+    var pictureElements = document.querySelectorAll('.aboutPicture');
+
+    function checkElements(elements) {
+        elements.forEach(function (element) {
+            var elementTop = element.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+            var scroll = window.scrollY || window.pageYOffset;
+
+            // Ajout de la condition pour le responsive design
+            if (window.innerWidth >= 1131) {
+                if (scroll > elementTop - windowHeight + 100) {
+                    element.classList.add('animated');
+                }
+            } else {
+                // Si la largeur de l'écran est inférieure à 1130px, désactiver l'animation
+                element.classList.remove('animated');
+            }
+        });
+    }
+
+    function updateOnResize() {
+        // Mise à jour de l'animation lors du redimensionnement de la fenêtre
+        checkElements(textElements);
+        checkElements(pictureElements);
+    }
+
+    window.addEventListener('scroll', function () {
+        checkElements(textElements);
+        checkElements(pictureElements);
+    });
+
+    // Pour afficher l'animation lors du chargement de la page
+    checkElements(textElements);
+    checkElements(pictureElements);
+
+    // Ajout de l'événement de redimensionnement pour mettre à jour l'animation
+    window.addEventListener('resize', updateOnResize);
+});
+
+
 // Animation to progressively reveal timeline articles as you scroll
 document.addEventListener('DOMContentLoaded', function () {
     const timelineArticles = document.querySelectorAll('.timeline article');

@@ -35,11 +35,11 @@
 
     <section id="about-section">
     {% for about in abouts %}
-        <div class="aboutText">
+        <div class="aboutText animate-from-left">
             <h2>A propos</h2>
             <p>{{ about.aboutText }}</p>
         </div>
-        <div class="aboutPicture">
+        <div class="aboutPicture animate-from-right">
             <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
         </div>
     {% endfor %}
