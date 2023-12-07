@@ -9,20 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
             var windowHeight = window.innerHeight;
             var scroll = window.scrollY || window.pageYOffset;
 
-            // Ajout de la condition pour le responsive design
+            // Adding the condition for responsive design
             if (window.innerWidth >= 1131) {
                 if (scroll > elementTop - windowHeight + 100) {
                     element.classList.add('animated');
                 }
             } else {
-                // Si la largeur de l'écran est inférieure à 1130px, désactiver l'animation
+                // If the screen width is less than 1130 pixels, disable the animation
                 element.classList.remove('animated');
             }
         });
     }
 
     function updateOnResize() {
-        // Mise à jour de l'animation lors du redimensionnement de la fenêtre
+        // Update the animation during window resizing
         checkElements(textElements);
         checkElements(pictureElements);
     }
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
         checkElements(pictureElements);
     });
 
-    // Pour afficher l'animation lors du chargement de la page
+    // To display the animation during page loading
     checkElements(textElements);
     checkElements(pictureElements);
 
-    // Ajout de l'événement de redimensionnement pour mettre à jour l'animation
+    // Adding the resize event to update the animation
     window.addEventListener('resize', updateOnResize);
 });
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll();
 });
 
-// Animation to display project picture on first clic, then going to Github page on second clic
+// Animation to display project picture on fullscreen
 document.addEventListener('DOMContentLoaded', function () {
     var projectBlocks = document.querySelectorAll('.projectBloc');
 
@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
         var printScreenImage = block.querySelector('.printScreen img');
         var overlay = document.createElement('div');
 
-        // Au départ, cacher l'image de la classe printScreen
+        // At the beginning, hide the image with the 'printScreen' class
         printScreenImage.style.display = 'none';
 
         // Créer l'overlay noir
         overlay.className = 'overlay';
         document.body.appendChild(overlay);
 
-        // Gestion du clic sur l'image projectPicture
+        // Handling the click on the 'projectPicture' image
         projectImage.addEventListener('click', function () {
             // Afficher l'image de la classe printScreen en plein écran
             printScreenImage.style.display = 'block';
@@ -94,21 +94,21 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.style.display = 'block';
         });
 
-        // Gestion du clic en dehors de l'image
+        // Handling the click outside of the image
         document.addEventListener('click', function (event) {
             if (
                 printScreenImage.classList.contains('fullscreen') &&
                 !printScreenImage.contains(event.target) &&
                 !projectImage.contains(event.target)
             ) {
-                // Si l'image est en plein écran et le clic est en dehors, la cacher
+                // If the image is in fullscreen and the click is outside, hide it
                 printScreenImage.classList.remove('fullscreen');
                 printScreenImage.style.display = 'none';
                 overlay.style.display = 'none';
             }
         });
 
-        // Écouter la fin de la transition pour rétablir la visibilité de l'image principale
+        // Listen for the end of the transition to restore the visibility of the main image
         printScreenImage.addEventListener('transitionend', function () {
             if (!printScreenImage.classList.contains('fullscreen')) {
                 projectImage.style.display = 'block';
