@@ -82,13 +82,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // At the beginning, hide the image with the 'printScreen' class
         printScreenImage.style.display = 'none';
 
-        // Créer l'overlay noir
+        // Creating black overlay
         overlay.className = 'overlay';
         document.body.appendChild(overlay);
 
         // Handling the click on the 'projectPicture' image
         projectImage.addEventListener('click', function () {
-            // Afficher l'image de la classe printScreen en plein écran
             printScreenImage.style.display = 'block';
             printScreenImage.classList.add('fullscreen');
             overlay.style.display = 'block';
