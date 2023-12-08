@@ -196,7 +196,25 @@
             img {
                 width: 280px !important;
             }
+
+            /* Désactiver l'effet hover */
+            img:hover {
+                box-shadow: none;
+            }
+
+            .textProject,
+            .skillsList {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .projectTitle+.textProject,
+            .projectTitle+.textProject+.skillsList {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .printScreen img.fullscreen {
             position: fixed;
             top: 0;

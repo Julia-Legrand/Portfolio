@@ -141,9 +141,23 @@
   #réalisations .projectBloc {
     width: 280px !important;
     margin: 20px 0;
+    /* Désactiver l'effet hover */
   }
   #réalisations .projectBloc img {
     width: 280px !important;
+  }
+  #réalisations .projectBloc img:hover {
+    box-shadow: none;
+  }
+  #réalisations .projectBloc .textProject,
+  #réalisations .projectBloc .skillsList {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #réalisations .projectBloc .projectTitle + .textProject,
+  #réalisations .projectBloc .projectTitle + .textProject + .skillsList {
+    opacity: 1;
+    transform: translateY(0);
   }
   #réalisations .printScreen img.fullscreen {
     position: fixed;
