@@ -243,14 +243,14 @@ span {
 
 /*************** INDEX ***************/
 /***** HEADER *****/
-header {
+.headerIndex {
   height: 100vh;
   background-image: linear-gradient(rgba(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-header .navbar-nav a {
+.headerIndex .navbar-nav a {
   text-transform: uppercase;
   margin: 20px;
   font-size: 20px;
@@ -258,7 +258,7 @@ header .navbar-nav a {
   text-align: center;
   font-weight: bold;
 }
-header .navbar-nav a:after {
+.headerIndex .navbar-nav a:after {
   content: "";
   display: block;
   margin: auto;
@@ -267,11 +267,11 @@ header .navbar-nav a:after {
   background: transparent;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
-header .navbar-nav a:hover:after {
+.headerIndex .navbar-nav a:hover:after {
   width: 100%;
   background: white;
 }
-header #presentation-section {
+.headerIndex #presentation-section {
   margin-top: 20%;
   margin-left: 40px;
   display: flex;
