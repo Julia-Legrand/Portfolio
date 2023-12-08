@@ -1,7 +1,13 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'onsubmit': 'return showPopup();'}}) }}
 
-	{{ form_widget(form) }}
+{{ form_widget(form) }}
 
-    <button class="button">{{ button_label|default('Envoyer') }}</button>
+<button class="button">{{ button_label|default('Envoyer') }}</button>
 
 {{ form_end(form) }}
+
+<script>
+    function showPopup() {
+        return confirm('Le message a bien été envoyé !');
+    }
+</script>

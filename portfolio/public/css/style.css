@@ -1,23 +1,24 @@
+@charset "UTF-8";
 /*************** INDEX ***************/
 @media all and (max-width: 1320px) {
   /***** ABOUT *****/
-  #about-section .aboutText {
+  #à-propos .aboutText {
     width: 450px !important;
   }
 }
 @media all and (max-width: 1130px) {
   /***** ABOUT *****/
-  #about-section {
+  #à-propos {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  #about-section .aboutText {
+  #à-propos .aboutText {
     margin: 30px !important;
     width: 80% !important;
   }
-  #about-section .aboutText,
-  #about-section .aboutPicture {
+  #à-propos .aboutText,
+  #à-propos .aboutPicture {
     opacity: 1 !important;
     transform: none !important;
     /* Initial position */
@@ -26,16 +27,16 @@
 }
 @media all and (max-width: 800px) {
   /***** SKILLS *****/
-  #skills-section .skillBlocs {
+  #compétences .skillBlocs {
     flex-direction: column !important;
     justify-content: space-evenly !important;
     align-items: center !important;
   }
   /***** CONTACT *****/
-  #contact-section {
+  #me-contacter {
     padding: 40px !important;
   }
-  #contact-section .custom-form {
+  #me-contacter .custom-form {
     width: 500px !important;
   }
 }
@@ -77,51 +78,51 @@
     font-size: 50px;
   }
   /***** ABOUT *****/
-  #about-section {
+  #à-propos {
     padding: 0 !important;
   }
-  #about-section .aboutText {
+  #à-propos .aboutText {
     width: 260px !important;
     margin: 40px 40px !important;
   }
   /***** CAREER *****/
-  #career-section .timeline {
+  #parcours .timeline {
     padding: 0 !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  #career-section .timeline:after {
+  #parcours .timeline:after {
     display: none;
   }
-  #career-section .timeline article {
+  #parcours .timeline article {
     width: 380px !important;
     padding: 15px;
   }
-  #career-section .timeline article + article {
+  #parcours .timeline article + article {
     margin-top: 20px;
   }
-  #career-section .timeline article:before {
+  #parcours .timeline article:before {
     display: none !important;
   }
-  #career-section .timeline article:after {
+  #parcours .timeline article:after {
     display: none;
   }
-  #career-section .timeline article:nth-child(even) {
+  #parcours .timeline article:nth-child(even) {
     margin-left: 0 !important;
   }
-  #career-section .timeline article:nth-child(even):before {
+  #parcours .timeline article:nth-child(even):before {
     display: none;
   }
-  #career-section .timeline article:nth-child(even):after {
+  #parcours .timeline article:nth-child(even):after {
     display: none;
   }
-  #career-section .timeline article li:not(:last-child) {
+  #parcours .timeline article li:not(:last-child) {
     border-bottom: 1px #aaa solid;
   }
   /***** CONTACT *****/
-  #contact-section .custom-form {
+  #me-contacter .custom-form {
     width: 280px !important;
   }
 }
@@ -131,27 +132,27 @@
     font-size: 40px;
   }
   /***** ABOUT *****/
-  #about-section .aboutPicture img {
+  #à-propos .aboutPicture img {
     width: 250px !important;
     height: auto;
     margin: 20px 0 60px 0 !important;
   }
   /***** PROJECTS *****/
-  #projects-section .projectBloc {
+  #réalisations .projectBloc {
     width: 280px !important;
     margin: 20px 0;
   }
-  #projects-section .projectBloc img {
+  #réalisations .projectBloc img {
     width: 280px !important;
   }
-  #projects-section .printScreen img.fullscreen {
+  #réalisations .printScreen img.fullscreen {
     position: fixed;
     top: 0;
     left: 47%;
     height: auto;
   }
   /***** CAREER *****/
-  #career-section .timeline article {
+  #parcours .timeline article {
     width: 280px !important;
   }
   /***** LEGAL PAGES *****/
@@ -281,7 +282,7 @@ header #presentation-section {
 }
 
 /***** ABOUT *****/
-#about-section {
+#à-propos {
   background-color: #0D121C;
   color: white;
   display: flex;
@@ -289,41 +290,52 @@ header #presentation-section {
   align-items: center;
   padding: 80px 0;
 }
-#about-section .aboutText {
+#à-propos a {
+  color: white;
+}
+#à-propos i {
+  color: white;
+  margin-left: 10px;
+}
+#à-propos a:hover {
+  text-decoration: none;
+  text-shadow: #f4eff3 1px 0 5px;
+}
+#à-propos .aboutText {
   width: 700px;
   text-align: center;
   margin: 60px;
   line-height: 30px;
 }
-#about-section .aboutPicture img {
+#à-propos .aboutPicture img {
   width: 325px;
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 30px 0px;
   border-radius: 50%;
   margin: 60px;
 }
-#about-section .aboutText,
-#about-section .aboutPicture {
+#à-propos .aboutText,
+#à-propos .aboutPicture {
   opacity: 0;
   transform: translateX(100);
   /* Initial position */
   transition: opacity 0.8s ease, transform 1s ease;
 }
-#about-section .animate-from-left {
+#à-propos .animate-from-left {
   transform-origin: left center;
 }
-#about-section .animate-from-right {
+#à-propos .animate-from-right {
   transform-origin: right center;
 }
-#about-section .animated {
+#à-propos .animated {
   opacity: 1 !important;
   transform: translateX(10%) !important;
 }
-#about-section .aboutPicture.animated {
+#à-propos .aboutPicture.animated {
   transform: translateX(-10%) !important;
 }
 
 /***** SKILLS *****/
-#skills-section {
+#compétences {
   background-image: linear-gradient(rgba(1, 1, 1, 0.85), rgba(1, 1, 1, 0.85)), url(../images/imageCode2.jpg);
   background-attachment: fixed;
   color: white;
@@ -333,13 +345,13 @@ header #presentation-section {
   align-items: center;
   padding: 90px 0;
 }
-#skills-section .skillBlocs {
+#compétences .skillBlocs {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
 }
-#skills-section .skillBlocs .skillBloc {
+#compétences .skillBlocs .skillBloc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -347,13 +359,13 @@ header #presentation-section {
   text-align: center;
   margin: 40px;
 }
-#skills-section .skillBlocs .skillBloc img {
+#compétences .skillBlocs .skillBloc img {
   border-radius: 50%;
   margin: 20px;
 }
 
 /***** PROJECTS *****/
-#projects-section {
+#réalisations {
   background-color: #0D121C;
   color: white;
   display: flex;
@@ -362,11 +374,11 @@ header #presentation-section {
   align-items: center;
   padding: 80px 40px;
 }
-#projects-section .skillsList ul {
+#réalisations .skillsList ul {
   list-style: none;
   padding: 0;
 }
-#projects-section .skillsList li {
+#réalisations .skillsList li {
   padding-left: 20px;
   text-indent: -20px;
 }
@@ -461,24 +473,24 @@ header #presentation-section {
 }
 
 /***** CAREER *****/
-#career-section {
+#parcours {
   background-color: #0D121C;
   padding: 20px 0 40px 0;
 }
-#career-section h2 {
+#parcours h2 {
   color: white;
 }
-#career-section * {
+#parcours * {
   box-sizing: border-box;
 }
-#career-section .timeline {
+#parcours .timeline {
   position: relative;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 60px;
 }
-#career-section .timeline:after {
+#parcours .timeline:after {
   content: "";
   position: absolute;
   top: 20px;
@@ -489,7 +501,7 @@ header #presentation-section {
   border-radius: 3px;
   z-index: 1;
 }
-#career-section .timeline article {
+#parcours .timeline article {
   position: relative;
   background: #eeeeee;
   width: calc(50% - 40px);
@@ -499,15 +511,15 @@ header #presentation-section {
   transform: translateY(20px);
   transition: opacity 0.5s, transform 0.5s;
 }
-#career-section .timeline article.visible {
+#parcours .timeline article.visible {
   /* Styles when an article becomes visible */
   opacity: 1;
   transform: translateY(0);
 }
-#career-section .timeline article + article {
+#parcours .timeline article + article {
   margin-top: 20px;
 }
-#career-section .timeline article:before {
+#parcours .timeline article:before {
   content: "";
   display: block;
   position: absolute;
@@ -520,7 +532,7 @@ header #presentation-section {
   border-radius: 50%;
   z-index: 2;
 }
-#career-section .timeline article:after {
+#parcours .timeline article:after {
   content: "";
   position: absolute;
   top: 0;
@@ -531,28 +543,28 @@ header #presentation-section {
   border-left: 15px solid #eeeeee;
   border-bottom: 12px solid transparent;
 }
-#career-section .timeline article:nth-child(even) {
+#parcours .timeline article:nth-child(even) {
   margin-left: calc(50% + 45px);
 }
-#career-section .timeline article:nth-child(even):before {
+#parcours .timeline article:nth-child(even):before {
   left: auto;
   right: calc(100% + 32px);
 }
-#career-section .timeline article:nth-child(even):after {
+#parcours .timeline article:nth-child(even):after {
   left: auto;
   right: 100%;
   border-left: none;
   border-right: 16px solid #eeeeee;
 }
-#career-section .timeline article ul {
+#parcours .timeline article ul {
   margin: 0;
   padding: 0;
 }
-#career-section .timeline article li {
+#parcours .timeline article li {
   list-style: none;
   padding: 8px 0;
 }
-#career-section .timeline article li:not(:last-child) {
+#parcours .timeline article li:not(:last-child) {
   border-bottom: 1px #aaa solid;
 }
 
@@ -602,7 +614,7 @@ header #presentation-section {
 }
 
 /***** CONTACT *****/
-#contact-section {
+#me-contacter {
   background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -615,7 +627,7 @@ header #presentation-section {
   align-items: center;
   padding: 100px 0;
 }
-#contact-section .custom-form {
+#me-contacter .custom-form {
   background-color: #EDEAEB;
   opacity: 0.7;
   border: 1px solid #EDEAEB;
@@ -625,7 +637,7 @@ header #presentation-section {
   width: 800px;
   padding: 10px;
 }
-#contact-section #contact_agreeTerms {
+#me-contacter #contact_agreeTerms {
   margin-left: 5px;
 }
 

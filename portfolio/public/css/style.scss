@@ -119,13 +119,27 @@ header {
 }
 
 /***** ABOUT *****/
-#about-section {
+#à-propos {
     background-color: #0D121C;
     color: white;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 80px 0;
+
+    a {
+        color: white;
+    }
+
+    i {
+        color: white;
+        margin-left: 10px;
+    }
+
+    a:hover {
+        text-decoration: none;
+        text-shadow: #f4eff3 1px 0 5px;
+    }
 
     .aboutText {
         width: 700px;
@@ -168,7 +182,7 @@ header {
 }
 
 /***** SKILLS *****/
-#skills-section {
+#compétences {
     background-image: linear-gradient(rgba(1, 1, 1, 0.85), rgba(1, 1, 1, 0.85)), url(../images/imageCode2.jpg);
     background-attachment: fixed;
     color: white;
@@ -201,7 +215,7 @@ header {
 }
 
 /***** PROJECTS *****/
-#projects-section {
+#réalisations {
     background-color: #0D121C;
     color: white;
     display: flex;
@@ -313,7 +327,7 @@ header {
 }
 
 /***** CAREER *****/
-#career-section {
+#parcours {
     background-color: #0D121C;
     padding: 20px 0 40px 0;
 
@@ -473,7 +487,7 @@ header {
 }
 
 /***** CONTACT *****/
-#contact-section {
+#me-contacter {
     background-image: linear-gradient(rgba(1, 1, 1, 0.8), rgba(1, 1, 1, 0.8)), url(../images/wallpaper2.jpg);
     background-attachment: fixed;
     background-position: center;

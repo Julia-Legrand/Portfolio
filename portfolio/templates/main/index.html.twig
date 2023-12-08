@@ -11,11 +11,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="monMenu">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#about-section">A propos</a>
-                        <a class="nav-item nav-link" href="#skills-section">Domaines d'expertise</a>
-                        <a class="nav-item nav-link" href="#projects-section">Réalisations</a>
-                        <a class="nav-item nav-link" href="#career-section">Parcours</a>
-                        <a class="nav-item nav-link" href="#contact-section">Contact</a>
+                        <a class="nav-item nav-link" href="#à-propos">A propos</a>
+                        <a class="nav-item nav-link" href="#compétences">Domaines d'expertise</a>
+                        <a class="nav-item nav-link" href="#réalisations">Réalisations</a>
+                        <a class="nav-item nav-link" href="#parcours">Parcours</a>
+                        <a class="nav-item nav-link" href="#me-contacter">Contact</a>
                     </div>
                 </div>
             </div>
@@ -33,11 +33,14 @@
 
     <!--A propos-->
 
-    <section id="about-section">
+    <section id="à-propos">
     {% for about in abouts %}
         <div class="aboutText animate-from-left">
             <h2>A propos</h2>
             <p>{{ about.aboutText }}</p>
+            {% for presentation in presentations %}
+                <a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV<i class="fa-solid fa-download"></i></a>
+            {% endfor %}
         </div>
         <div class="aboutPicture animate-from-right">
             <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
@@ -47,7 +50,7 @@
 
     <!--Domaines d'expertise-->
 
-    <section id="skills-section">
+    <section id="compétences">
         <h2>Domaines d'expertise</h2>
             <div class="skillBlocs">
                 {% for skill in skills %}
@@ -63,7 +66,7 @@
 
     <!--Réalisations-->
 
-    <section id="projects-section">
+    <section id="réalisations">
         <h2>Réalisations</h2>
         <div class="projectBlocs">
             {% for project in projects %}
@@ -79,7 +82,7 @@
                     <div class="projectTitle">
                         <h3>{{ project.projectTitle }}</h3>
                         {% if project.github %}
-                            <a href="{{ project.github }}"><i class="fa-brands fa-github"></i></a>
+                            <a href="{{ project.github }}" target="_blank"><i class="fa-brands fa-github"></i></a>
                         {% endif %}
                     </div>
 
@@ -99,7 +102,7 @@
 
     <!--Parcours-->
 
-    <section id="career-section">
+    <section id="parcours">
         <h2>Parcours</h2>
         <div class="timeline">
             {% for career in careers %}
@@ -129,7 +132,7 @@
 
     <!--Contact-->
 
-    <section id="contact-section">
+    <section id="me-contacter">
         <h2>Contact</h2>
         {{ include('contact/_form.html.twig') }}
     </section>

@@ -1,7 +1,7 @@
 /*************** INDEX ***************/
 @media all and (max-width:1320px) {
     /***** ABOUT *****/
-    #about-section {
+    #à-propos {
         .aboutText {
             width: 450px !important;
         }
@@ -10,7 +10,7 @@
 
 @media all and (max-width:1130px) {
     /***** ABOUT *****/
-    #about-section {
+    #à-propos {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -33,7 +33,7 @@
 @media all and (max-width:800px) {
 
     /***** SKILLS *****/
-    #skills-section {
+    #compétences {
         .skillBlocs {
             flex-direction: column !important;
             justify-content: space-evenly !important;
@@ -42,7 +42,7 @@
     }
 
     /***** CONTACT *****/
-    #contact-section {
+    #me-contacter {
         padding: 40px !important;
         .custom-form {
             width: 500px !important;
@@ -103,7 +103,7 @@
     }
 
     /***** ABOUT *****/
-    #about-section {
+    #à-propos {
         padding: 0 !important;
 
         .aboutText {
@@ -113,7 +113,7 @@
     }
 
     /***** CAREER *****/
-    #career-section {
+    #parcours {
         .timeline {
             padding: 0 !important;
             display: flex;
@@ -160,7 +160,7 @@
         }
     }
     /***** CONTACT *****/
-    #contact-section {
+    #me-contacter {
         .custom-form {
             width: 280px !important;
         }
@@ -179,7 +179,7 @@
     }
 
     /***** ABOUT *****/
-    #about-section {
+    #à-propos {
         .aboutPicture img {
             width: 250px !important;
             height: auto;
@@ -188,7 +188,7 @@
     }
 
     /***** PROJECTS *****/
-    #projects-section {
+    #réalisations {
         .projectBloc {
             width: 280px !important;
             margin: 20px 0;
@@ -206,7 +206,7 @@
     }
 
     /***** CAREER *****/
-    #career-section {
+    #parcours {
         .timeline article {
             width: 280px !important;
         }
