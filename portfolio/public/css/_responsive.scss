@@ -202,14 +202,12 @@
                 box-shadow: none;
             }
 
-            .textProject,
-            .skillsList {
+            .textProject {
                 opacity: 1;
                 transform: translateY(0);
             }
 
-            .projectTitle+.textProject,
-            .projectTitle+.textProject+.skillsList {
+            .projectTitle+.textProject {
                 opacity: 1;
                 transform: translateY(0);
             }
