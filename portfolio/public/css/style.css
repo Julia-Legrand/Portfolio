@@ -388,14 +388,6 @@ span {
   align-items: center;
   padding: 80px 40px;
 }
-#réalisations .skillsList ul {
-  list-style: none;
-  padding: 0;
-}
-#réalisations .skillsList li {
-  padding-left: 20px;
-  text-indent: -20px;
-}
 
 .projectBlocs {
   display: flex;
@@ -440,23 +432,16 @@ span {
   box-shadow: rgba(247, 246, 248, 0.899) 0px 0px 40px 0px;
 }
 
-.projectBloc .textProject,
-.projectBloc .skillsList {
+.projectBloc .textProject {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s, transform 0.5s;
 }
 
-.projectBloc:hover .projectTitle + .textProject,
-.projectBloc:hover .projectTitle + .textProject + .skillsList {
+.projectBloc:hover .projectTitle + .textProject {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s, transform 0.5s;
-}
-
-.projectBloc .skillsList strong {
-  font-size: 18px;
-  font-family: "Alata", sans-serif;
 }
 
 .printScreen img {

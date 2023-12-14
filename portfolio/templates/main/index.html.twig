@@ -88,13 +88,6 @@
 
                     <span class="textProject">{{ project.projectText }}</span>
 
-                    <div class="skillsList">
-                        <ul>
-                            {% for skill in project.skills %}
-                                <li><strong>{{ skill.skillTitle }}{% if not loop.last %}, {% endif %}</strong></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
                 </div>
             {% endfor %}
         </div>
