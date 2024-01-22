@@ -149,13 +149,11 @@
   #réalisations .projectBloc img:hover {
     box-shadow: none;
   }
-  #réalisations .projectBloc .textProject,
-  #réalisations .projectBloc .skillsList {
+  #réalisations .projectBloc .textProject {
     opacity: 1;
     transform: translateY(0);
   }
-  #réalisations .projectBloc .projectTitle + .textProject,
-  #réalisations .projectBloc .projectTitle + .textProject + .skillsList {
+  #réalisations .projectBloc .projectTitle + .textProject {
     opacity: 1;
     transform: translateY(0);
   }
