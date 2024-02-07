@@ -4,7 +4,7 @@
 
 {% block header %}
     <header class="headerAdmin">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark">
             <ul class="navbar-nav ml-auto">
                 {% if app.user %}
                     <li class="nav-item">
@@ -14,7 +14,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_logout') }}">
-                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <i class="fa-solid fa-right-from-bracket" style="margin-left:15px;"></i>
                         </a>
                     </li>
                 {% endif %}
@@ -26,7 +26,8 @@
 {% block body %}
 <main class="mainAdmin">
     <section class="row mr-0 ml-0">
-        <aside class="col-md-2 bg-dark pr-0">
+    {# Sidebar fullsize #}
+        <aside class="col-md-2 bg-dark pr-0 sidebarFullsize">
             <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
                 <div class="collapse navbar-collapse">
                     <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
@@ -69,6 +70,45 @@
                 </div>
             </nav>
         </aside>
+
+        {# Sidebar responsive #}
+        <aside class="col-md-2 bg-dark pr-0 sidebarResponsive">
+            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
+                <div class="collapse navbar-collapse">
+                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_presentation_index') }}">
+                                <i class="fa-solid fa-user"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_about_index') }}">
+                                <i class="fa-solid fa-question"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_skills_index') }}">
+                                <i class="fa-solid fa-code"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_projects_index') }}">
+                                <i class="fa-solid fa-display"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_pictures_index') }}">
+                                <i class="fa-regular fa-image"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_career_index') }}">
+                                <i class="fa-solid fa-graduation-cap"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_contact_index') }}">
+                                <i class="fa-regular fa-message"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
         <div class="col-md-10" id="dashboard">
             <div class="row mr-0 ml-0">
                 <div class="col-md-4">
@@ -89,7 +129,7 @@
                                         {% for presentation in presentations %}
                                             <tr>
                                                 <td>{{ presentation.title }}</td>
-                                                <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
+                                                <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80"></td>
                                                 <td>{{ presentation.githubLink }}</td>
                                                 <td>{{ presentation.linkedinLink }}</td>
                                             </tr>
@@ -140,7 +180,7 @@
                                         {% for about in abouts %}
                                             <tr>
                                                 <td>{{ about.aboutText }}</td>
-                                                <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80px"></td>
+                                                <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80"></td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>

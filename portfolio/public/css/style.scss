@@ -586,11 +586,21 @@ footer {
 }
 
 /***** ADMIN *****/
+.headerAdmin {
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+}
 .mainAdmin {
     i {
         margin-right: 10px;
     }
 
+    .sidebarResponsive {
+        display: none;
+    }
+    
     #dashboard {
         background-color: #d6d6d6;
         width: 100%;
@@ -602,7 +612,6 @@ footer {
 
     table {
         background-color: white;
-        box-shadow: #0D121C 1px 0 5px;
 
         th {
             text-align: center;

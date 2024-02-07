@@ -1,12 +1,13 @@
 @charset "UTF-8";
-/*************** INDEX ***************/
 @media all and (max-width: 1320px) {
+  /*************** INDEX ***************/
   /***** ABOUT *****/
   #à-propos .aboutText {
     width: 450px !important;
   }
 }
 @media all and (max-width: 1130px) {
+  /*************** INDEX ***************/
   /***** ABOUT *****/
   #à-propos {
     flex-direction: column;
@@ -23,6 +24,14 @@
     transform: none !important;
     /* Initial position */
     transition: none !important;
+  }
+  /*************** ADMIN PAGES ***************/
+  /***** ADMIN *****/
+  .mainAdmin .sidebarFullsize {
+    display: none;
+  }
+  .mainAdmin .sidebarResponsive {
+    display: block !important;
   }
 }
 @media all and (max-width: 800px) {
@@ -68,13 +77,13 @@
 }
 @media all and (max-width: 520px) {
   /***** HEADER *****/
-  header {
+  .headerIndex {
     height: 70vh !important;
   }
-  header #presentation-section {
+  .headerIndex #presentation-section {
     margin-top: 200px !important;
   }
-  header #presentation-section h1 {
+  .headerIndex #presentation-section h1 {
     font-size: 50px;
   }
   /***** ABOUT *****/
@@ -171,7 +180,8 @@
   .mainLegals h1 {
     font-size: 30px !important;
   }
-  .mainLegals h2, .mainLegals h3 {
+  .mainLegals h2,
+  .mainLegals h3 {
     font-size: 25px !important;
   }
 }
@@ -716,8 +726,16 @@ footer .legals2 a {
 }
 
 /***** ADMIN *****/
+.headerAdmin .navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+
 .mainAdmin i {
   margin-right: 10px;
+}
+.mainAdmin .sidebarResponsive {
+  display: none;
 }
 .mainAdmin #dashboard {
   background-color: #d6d6d6;
@@ -728,7 +746,6 @@ footer .legals2 a {
 }
 .mainAdmin table {
   background-color: white;
-  box-shadow: #0D121C 1px 0 5px;
 }
 .mainAdmin table th {
   text-align: center;
