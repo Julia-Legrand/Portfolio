@@ -22,11 +22,11 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('contactName', TextType::class, [
-                'label' => 'Nom et Prénom',
+                'label' => 'Nom et Prénom *',
                 'attr' => ['class' => 'custom-form'],
             ])
             ->add('contactEmail', EmailType::class, [
-                'label' => 'E-mail',
+                'label' => 'E-mail *',
                 'attr' => ['class' => 'custom-form'],
                 'constraints' => [
                     new NotBlank(),
@@ -34,7 +34,7 @@ class ContactType extends AbstractType
                 ],
             ])
             ->add('contactMessage', TextareaType::class, [
-                'label' => 'Message',
+                'label' => 'Message *',
                 'attr' => ['class' => 'custom-form'],
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -49,8 +49,7 @@ class ContactType extends AbstractType
             ->add('captcha', Recaptcha3Type::class, [
                 'constraints' => new Recaptcha3(),
                 'action_name' => 'contact',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -116,3 +116,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Pop-up to display "Message envoyé"
+function showPopup() {
+    return confirm('Le message a bien été envoyé !');
+}
+
+function submitForm() {
+    if (showPopup()) { // Scroll to the top of the page
+        window.scrollTo(0, 0);
+        return true; // Allow the form submission
+    }
+    return false; // Prevent the form submission if the user clicks cancel in the popup
+};

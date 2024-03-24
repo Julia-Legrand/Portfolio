@@ -1,40 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bibliothèque d'images{% endblock %}
+{% block title %}Bibliothèque d'images
+{% endblock %}
 
 {% block body %}
-<main class="mainIndex">
-    <h2>Bibliothèque d'images</h2>
+	<main class="mainIndex">
+		<h2>Bibliothèque d'images</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom de l'image</th>
-                <th>Image</th>
-                <th>Projet lié</th>
-                <th>Modifier</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for picture in pictures %}
-            <tr>
-                <td>{{ picture.namePicture }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ picture.picture) }}" style="width: 80px;"></td>
-                <td>{{ picture.projects.projectTitle }}</td>
-                <td>
-                    <a href="{{ path('app_pictures_edit', {'id': picture.id}) }}"><i class="fa-solid fa-pen"></i></a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">Donnée vide</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class="buttons">
-        <a href="{{ path('app_pictures_new') }}" class="btn">Ajouter</a>
-        <a href="{{ path('admin') }}" class="btn">Retour</a>
-    </div>
-</main>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nom de l'image</th>
+					<th>Image</th>
+					<th>Projet lié</th>
+					<th>Modifier</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for picture in pictures %}
+					<tr>
+						<td data-label="Nom de l'image :">{{ picture.namePicture }}</td>
+						<td data-label="Image :"><img src="{{ asset('uploads/images/' ~ picture.picture) }}" width="80px"></td>
+						<td data-label="Projet lié :">{{ picture.projects.projectTitle }}</td>
+						<td data-label="Modifier">
+							<a href="{{ path('app_pictures_edit', {'id': picture.id}) }}">
+								<i class="fa-solid fa-pen"></i>
+							</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="4">Donnée vide</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="buttons">
+			<a href="{{ path('app_pictures_new') }}" class="btn">Ajouter</a>
+			<a href="{{ path('admin') }}" class="btn">Retour</a>
+		</div>
+	</main>
 {% endblock %}

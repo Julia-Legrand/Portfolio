@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MainController extends AbstractController
 {
-    
+
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
     public function index(Request $request, EntityManagerInterface $entityManager, AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, PicturesRepository $picturesRepository): Response
     {
@@ -42,11 +42,11 @@ class MainController extends AbstractController
             'presentations' => $presentationRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'projects' => $projectsRepository->findAll(),
-            'careers' => $careerRepository->findAll(), 
+            'careers' => $careerRepository->findAll(),
             'pictures' => $picturesRepository->findAll(),
         ]);
     }
-    
+
     #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]
     public function admin(AboutRepository $aboutRepository, PresentationRepository $presentationRepository, SkillsRepository $skillsRepository, ProjectsRepository $projectsRepository, CareerRepository $careerRepository, ContactRepository $contactRepository, PicturesRepository $picturesRepository): Response

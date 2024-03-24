@@ -1,43 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Présentation{% endblock %}
+{% block title %}Présentation
+{% endblock %}
 
 {% block body %}
-<main class="mainIndex">
-    <h2>Présentation</h2>
+	<main class="mainIndex">
+		<h2>Présentation</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Titre</th>
-                <th>CV</th>
-                <th>Github</th>
-                <th>LinkedIn</th>
-                <th>Modifier</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for presentation in presentations %}
-            <tr>
-                <td><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
-                <td>{{ presentation.title }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
-                <td>{{ presentation.githubLink }}</td>
-                <td>{{ presentation.linkedinLink }}</td>
-                <td>
-                    <a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}"><i class="fa-solid fa-pen"></i></a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">Donnée vide</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class="buttons">
-        <a href="{{ path('admin') }}" class="btn">Retour</a>
-    </div>
-</main>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Image</th>
+					<th>Titre</th>
+					<th>CV</th>
+					<th>GitHub</th>
+					<th>LinkedIn</th>
+					<th>Modifier</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for presentation in presentations %}
+					<tr>
+						<td data-label="Image :"><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
+						<td data-label="Titre :">{{ presentation.title }}</td>
+						<td data-label="CV :"><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px"></td>
+						<td data-label="GitHub :">{{ presentation.githubLink }}</td>
+						<td data-label="LinkedIn :">{{ presentation.linkedinLink }}</td>
+						<td data-label="Modifier">
+							<a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}">
+								<i class="fa-solid fa-pen"></i>
+							</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="7">Donnée vide</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="buttons">
+			<a href="{{ path('admin') }}" class="btn">Retour</a>
+		</div>
+	</main>
 {% endblock %}

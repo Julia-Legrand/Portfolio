@@ -17,7 +17,8 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', TextType::class, [
-                'label' => 'Email'
+                'label' => 'E-mail',
+                'attr' => ['class' => 'custom-form'],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -29,14 +30,13 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Please enter a password',
                     ]),
                     new Length([
-                        'min' => 6,
+                        'min' => 8,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

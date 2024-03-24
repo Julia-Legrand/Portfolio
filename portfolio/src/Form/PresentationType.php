@@ -15,7 +15,7 @@ class PresentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('wallpaper',FileType::class, [
+            ->add('wallpaper', FileType::class, [
                 'label' => 'Fond d\'écran',
                 'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
@@ -49,14 +49,13 @@ class PresentationType extends AbstractType
                 ]
             ])
             ->add('githubLink', TextType::class, [
-                'label' => 'Lien Github',
+                'label' => 'Lien GitHub',
                 'attr' => ['class' => 'custom-form'],
             ])
             ->add('linkedinLink', TextType::class, [
                 'label' => 'Lien LinkedIn',
                 'attr' => ['class' => 'custom-form'],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

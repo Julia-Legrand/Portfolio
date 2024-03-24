@@ -17,9 +17,9 @@ class ProjectsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('projectPicture', FileType::class, [
-            'label' => 'Illustration',
-            'attr' => ['class' => 'custom-form'],
+            ->add('projectPicture', FileType::class, [
+                'label' => 'Illustration',
+                'attr' => ['class' => 'custom-form'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -46,10 +46,9 @@ class ProjectsType extends AbstractType
                 'expanded' => true,
             ])
             ->add('github', TextType::class, [
-                'label' => 'Lien Github',
+                'label' => 'Lien GitHub',
                 'attr' => ['class' => 'custom-form'],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

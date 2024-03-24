@@ -1,296 +1,307 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page administration{% endblock %}
+{% block title %}Page administration
+{% endblock %}
 
 {% block header %}
-    <header class="headerAdmin">
-        <nav class="navbar navbar-dark bg-dark">
-            <ul class="navbar-nav ml-auto">
-                {% if app.user %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('home') }}">
-                            <i class="fa-solid fa-house"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_logout') }}">
-                            <i class="fa-solid fa-right-from-bracket" style="margin-left:15px;"></i>
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
+	<header class="headerAdmin">
+		<nav class="navbar navbar-dark bg-dark">
+			<ul class="navbar-nav ml-auto">
+				{% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('home') }}">
+							<i class="fa-solid fa-house"></i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_logout') }}">
+							<i class="fa-solid fa-right-from-bracket" style="margin-left:15px;"></i>
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</nav>
+	</header>
 {% endblock %}
 
 {% block body %}
-<main class="mainAdmin">
-    <section class="row mr-0 ml-0">
-    {# Sidebar fullsize #}
-        <aside class="col-md-2 bg-dark pr-0 sidebarFullsize">
-            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
-                <div class="collapse navbar-collapse">
-                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_presentation_index') }}">
-                                <i class="fa-solid fa-user"></i>
-                                Présentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_about_index') }}">
-                                <i class="fa-solid fa-question"></i>
-                                A propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_skills_index') }}">
-                                <i class="fa-solid fa-code"></i>
-                                Domaines d'expertise</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_projects_index') }}">
-                                <i class="fa-solid fa-display"></i>
-                                Réalisations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_pictures_index') }}">
-                                <i class="fa-regular fa-image"></i>
-                                Bibliothèque d'images</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_career_index') }}">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                                Parcours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_contact_index') }}">
-                                <i class="fa-regular fa-message"></i>
-                                Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
+	<main class="mainAdmin">
+		<section
+			class="row mr-0 ml-0">
+			{# Sidebar fullsize #}
+			<aside class="col-md-2 bg-dark pr-0 sidebarFullsize">
+				<nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
+					<div class="collapse navbar-collapse">
+						<ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_presentation_index') }}">
+									<i class="fa-solid fa-user"></i>
+									Présentation</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_about_index') }}">
+									<i class="fa-solid fa-question"></i>
+									A propos</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_skills_index') }}">
+									<i class="fa-solid fa-code"></i>
+									Domaines d'expertise</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_projects_index') }}">
+									<i class="fa-solid fa-display"></i>
+									Réalisations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_pictures_index') }}">
+									<i class="fa-regular fa-image"></i>
+									Bibliothèque d'images</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_career_index') }}">
+									<i class="fa-solid fa-graduation-cap"></i>
+									Parcours</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_contact_index') }}">
+									<i class="fa-regular fa-message"></i>
+									Contacts</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</aside>
 
-        {# Sidebar responsive #}
-        <aside class="col-md-2 bg-dark pr-0 sidebarResponsive">
-            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
-                <div class="collapse navbar-collapse">
-                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_presentation_index') }}">
-                                <i class="fa-solid fa-user"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_about_index') }}">
-                                <i class="fa-solid fa-question"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_skills_index') }}">
-                                <i class="fa-solid fa-code"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_projects_index') }}">
-                                <i class="fa-solid fa-display"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_pictures_index') }}">
-                                <i class="fa-regular fa-image"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_career_index') }}">
-                                <i class="fa-solid fa-graduation-cap"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_contact_index') }}">
-                                <i class="fa-regular fa-message"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
+			{# Sidebar responsive #}
+			<aside class="col-md-2 bg-dark pr-0 sidebarResponsive">
+				<nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
+					<div class="collapse navbar-collapse">
+						<ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_presentation_index') }}">
+									<i class="fa-solid fa-user"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_about_index') }}">
+									<i class="fa-solid fa-question"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_skills_index') }}">
+									<i class="fa-solid fa-code"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_projects_index') }}">
+									<i class="fa-solid fa-display"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_pictures_index') }}">
+									<i class="fa-regular fa-image"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_career_index') }}">
+									<i class="fa-solid fa-graduation-cap"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_contact_index') }}">
+									<i class="fa-regular fa-message"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</aside>
 
-        <div class="col-md-10" id="dashboard">
-            <div class="row mr-0 ml-0">
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Présentation</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Titre</th>
-                                            <th>CV</th>
-                                            <th>Github</th>
-                                            <th>LinkedIn</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for presentation in presentations %}
-                                            <tr>
-                                                <td>{{ presentation.title }}</td>
-                                                <td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80"></td>
-                                                <td>{{ presentation.githubLink }}</td>
-                                                <td>{{ presentation.linkedinLink }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <h3>Contacts</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Email</th>
-                                            <th>Message</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for contact in contacts %}
-                                            <tr>
-                                                <td>{{ contact.contactName }}</td>
-                                                <td>{{ contact.contactEmail }}</td>
-                                                <td>{{ contact.contactMessage }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+			<div class="col-md-10" id="dashboard">
+				<div class="row mr-0 ml-0">
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Présentation</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Titre</th>
+												<th>CV</th>
+												<th>Github</th>
+												<th>LinkedIn</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for presentation in presentations %}
+												<tr>
+													<td>{{ presentation.title }}</td>
+													<td><img src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80"></td>
+													<td>{{ presentation.githubLink }}</td>
+													<td>{{ presentation.linkedinLink }}</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<h3>Contacts</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Nom</th>
+												<th>Email</th>
+												<th>Message</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for contact in contacts %}
+												<tr>
+													<td>{{ contact.contactName }}</td>
+													<td>{{ contact.contactEmail }}</td>
+													<td>{{ contact.contactMessage }}</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>A propos</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Texte</th>
-                                            <th>Photo</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for about in abouts %}
-                                            <tr>
-                                                <td>{{ about.aboutText }}</td>
-                                                <td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80"></td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+					<div class="col-md-3">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>A propos</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Texte</th>
+												<th>Photo</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for about in abouts %}
+												<tr>
+													<td>{{ about.aboutText }}</td>
+													<td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80"></td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                <div class="col-md-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Domaines d'expertise</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Logo</th>
-                                            <th>Titre</th>
-                                            <th>Texte</th>
-                                            <th>Liste</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for skill in skills %}
-                                            <tr>
-                                                <td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
-                                                <td>{{ skill.skillTitle }}</td>
-                                                <td>{{ skill.skillText }}</td>
-                                                <td>{{ skill.skillList }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+					<div class="col-md-5">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Domaines d'expertise</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Logo</th>
+												<th>Titre</th>
+												<th>Texte</th>
+												<th>Liste</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for skill in skills %}
+												<tr>
+													<td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
+													<td>{{ skill.skillTitle }}</td>
+													<td>{{ skill.skillText }}</td>
+													<td>{{ skill.skillList }}</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-            <div class="row mr-0 ml-0">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Réalisations</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Titre</th>
-                                            <th>Description</th>
-                                            <th>Compétences</th>
-                                            <th>Github</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for project in projects %}
-                                            <tr>
-                                                <td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
-                                                <td>{{ project.projectTitle }}</td>
-                                                <td>{{ project.projectText }}</td>
-                                                <td>
-                                                {% for skill in project.skills %}
-                                                    {{ skill.skillTitle }}{% if not loop.last %}, {% endif %}
-                                                {% endfor %}
-                                                </td>
-                                                <td>{{ project.github }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class="row mr-0 ml-0">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Réalisations</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Image</th>
+												<th>Titre</th>
+												<th>Description</th>
+												<th>Compétences</th>
+												<th>Github</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for project in projects %}
+												<tr>
+													<td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
+													<td>{{ project.projectTitle }}</td>
+													<td>{{ project.projectText }}</td>
+													<td>
+														{% for skill in project.skills %}
+															{{ skill.skillTitle }}
+															{% if not loop.last %},
+															{% endif %}
+														{% endfor %}
+													</td>
+													<td>{{ project.github }}</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Parcours</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Titre</th>
-                                            <th>Entreprise/École</th>
-                                            <th>Ville</th>
-                                            <th>Début</th>
-                                            <th>Fin</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for career in careers %}
-                                            <tr>
-                                                <td>{{ career.careerTitle }}</td>
-                                                <td>{{ career.careerCompany }}</td>
-                                                <td>{{ career.careerCity }}</td>
-                                                <td>{{ career.startDate }}</td>
-                                                <td>{{ career.endDate }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Parcours</h3>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Titre</th>
+												<th>Entreprise/École</th>
+												<th>Ville</th>
+												<th>Début</th>
+												<th>Fin</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for career in careers %}
+												<tr>
+													<td>{{ career.careerTitle }}</td>
+													<td>{{ career.careerCompany }}</td>
+													<td>{{ career.careerCity }}</td>
+													<td>{{ career.startDate }}</td>
+													<td>{{ career.endDate }}</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 {% endblock %}

@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/skills')]
@@ -23,6 +24,7 @@ class SkillsController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/new', name: 'app_skills_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
@@ -36,12 +38,12 @@ class SkillsController extends AbstractController
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-        
+
                 $imageFile->move(
                     $this->getParameter('images_directory'),
                     $newFilename
                 );
-        
+
                 $skill->setSkillPicture($newFilename);
             }
             $entityManager->persist($skill);
@@ -56,6 +58,7 @@ class SkillsController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/edit', name: 'app_skills_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Skills $skill, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
@@ -68,12 +71,12 @@ class SkillsController extends AbstractController
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-        
+
                 $imageFile->move(
                     $this->getParameter('images_directory'),
                     $newFilename
                 );
-        
+
                 $skill->setSkillPicture($newFilename);
             }
             $entityManager->flush();
@@ -87,10 +90,11 @@ class SkillsController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}', name: 'app_skills_delete', methods: ['POST'])]
     public function delete(Request $request, Skills $skill, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$skill->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $skill->getId(), $request->request->get('_token'))) {
             $entityManager->remove($skill);
             $entityManager->flush();
         }

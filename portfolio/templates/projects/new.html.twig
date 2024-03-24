@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau projet{% endblock %}
+{% block title %}Nouveau projet
+{% endblock %}
 
 {% block body %}
-<main class="mainIndex">
-    <h2>Ajouter</h2>
+	<main class="mainIndex">
+		<h2>Ajouter</h2>
 
-    <div class="buttons">
-        {{ include('projects/_form.html.twig') }}
-        <a href="{{ path('app_projects_index') }}" class="btn">Retour</a>
-     </div>
-</main>
+		<div class="buttons">
+			{{ include('projects/_form.html.twig') }}
+			<a href="{{ path('app_projects_index') }}" class="btn">Retour</a>
+		</div>
+	</main>
 {% endblock %}

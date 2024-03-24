@@ -14,7 +14,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
 
     public const ROLE_USER = 'ROLE_USER';
-    public const ROLE_ADMIN = 'ROLE_ADMIN';
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -33,7 +32,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->roles = [self::ROLE_USER];
     }
 

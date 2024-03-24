@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/presentation')]
@@ -23,6 +24,7 @@ class PresentationController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/edit', name: 'app_presentation_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Presentation $presentation, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
@@ -35,12 +37,12 @@ class PresentationController extends AbstractController
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '.' . $imageFile->guessExtension();
-        
+
                 $imageFile->move(
                     $this->getParameter('images_directory'),
                     $newFilename
                 );
-        
+
                 $presentation->setWallpaper($newFilename);
             }
             $imageFile = $form->get('cv')->getData();
@@ -48,12 +50,12 @@ class PresentationController extends AbstractController
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '.' . $imageFile->guessExtension();
-        
+
                 $imageFile->move(
                     $this->getParameter('images_directory'),
                     $newFilename
                 );
-        
+
                 $presentation->setCv($newFilename);
             }
 

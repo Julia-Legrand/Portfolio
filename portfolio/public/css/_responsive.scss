@@ -101,9 +101,41 @@
             }
         }
     }
+
+    /*************** ADMIN PAGES ***************/
+    .mainIndex {
+        .table {
+            thead {
+                display: none;
+            }
+
+            tr {
+                display: block;
+            }
+
+            td {
+                display: block;
+                text-align: right !important;
+            }
+
+            td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 @media all and (max-width:520px) {
+
+    /*************** ADMIN PAGES ***************/
+    .buttons {
+        .custom-form {
+            width: 400px !important;
+        }
+    }
 
     /***** HEADER *****/
     .headerIndex {
@@ -254,6 +286,17 @@
         h2,
         h3 {
             font-size: 25px !important;
+        }
+    }
+
+    /***** ADMIN PAGES *****/
+    .navbar-expand .navbar-nav .nav-link {
+        padding: 0 !important;
+    }
+
+    .buttons {
+        .custom-form {
+            width: 280px !important;
         }
     }
 }
