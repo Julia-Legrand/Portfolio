@@ -71,7 +71,7 @@
     /***** HEADER *****/
     header {
         #presentation-section {
-            margin-top: 30% !important;
+            margin-top: 50% !important;
             margin-left: 0 !important;
             align-items: center !important;
 
@@ -139,10 +139,10 @@
 
     /***** HEADER *****/
     .headerIndex {
-        height: 70vh !important;
+        min-height: 80vh !important;
+        height: auto;
 
         #presentation-section {
-            margin-top: 200px !important;
 
             h1 {
                 font-size: 50px;
@@ -221,7 +221,7 @@
     /***** HEADER *****/
     .headerIndex {
         background-attachment: scroll !important;
-        min-height: 50vh !important;
+        min-height: 70vh !important;
         height: auto;
 
         #presentation-section {
