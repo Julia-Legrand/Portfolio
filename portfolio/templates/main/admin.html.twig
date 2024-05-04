@@ -139,171 +139,171 @@
 												<tr>
 													<td>{{ presentation.title }}</td>
 													<td>
-														<object data="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80" height="113"></td>
+														<embed src="{{ asset('uploads/images/' ~ presentation.cv) }}" type="application/pdf" width="80" height="113">
 													</td>
-													<td>{{ presentation.githubLink }}</td>
-													<td>{{ presentation.linkedinLink }}</td>
 												</tr>
-											{% endfor %}
+											</td>
+											<td>{{ presentation.githubLink }}</td>
+											<td>{{ presentation.linkedinLink }}</td>
 										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<h3>Contacts</h3>
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Nom</th>
-												<th>Email</th>
-												<th>Message</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for contact in contacts %}
-												<tr>
-													<td>{{ contact.contactName }}</td>
-													<td>{{ contact.contactEmail }}</td>
-													<td>{{ contact.contactMessage }}</td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3">
-						<div class="row">
-							<div class="col-md-12">
-								<h3>A propos</h3>
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Texte</th>
-												<th>Photo</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for about in abouts %}
-												<tr>
-													<td>{{ about.aboutText }}</td>
-													<td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80"></td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-5">
-						<div class="row">
-							<div class="col-md-12">
-								<h3>Domaines d'expertise</h3>
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Logo</th>
-												<th>Titre</th>
-												<th>Texte</th>
-												<th>Liste</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for skill in skills %}
-												<tr>
-													<td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
-													<td>{{ skill.skillTitle }}</td>
-													<td>{{ skill.skillText }}</td>
-													<td>{{ skill.skillList }}</td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
 					</div>
 				</div>
-
-				<div class="row mr-0 ml-0">
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-12">
-								<h3>Réalisations</h3>
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Image</th>
-												<th>Titre</th>
-												<th>Description</th>
-												<th>Compétences</th>
-												<th>Lien</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for project in projects %}
-												<tr>
-													<td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
-													<td>{{ project.projectTitle }}</td>
-													<td>{{ project.projectText }}</td>
-													<td>
-														{% for skill in project.skills %}
-															{{ skill.skillTitle }}
-															{% if not loop.last %},
-															{% endif %}
-														{% endfor %}
-													</td>
-													<td>{{ project.github }}</td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-12">
-								<h3>Parcours</h3>
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Titre</th>
-												<th>Entreprise/École</th>
-												<th>Ville</th>
-												<th>Début</th>
-												<th>Fin</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for career in careers %}
-												<tr>
-													<td>{{ career.careerTitle }}</td>
-													<td>{{ career.careerCompany }}</td>
-													<td>{{ career.careerCity }}</td>
-													<td>{{ career.startDate }}</td>
-													<td>{{ career.endDate }}</td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+				<div class="col-md-12">
+					<h3>Contacts</h3>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Nom</th>
+									<th>Email</th>
+									<th>Message</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for contact in contacts %}
+									<tr>
+										<td>{{ contact.contactName }}</td>
+										<td>{{ contact.contactEmail }}</td>
+										<td>{{ contact.contactMessage }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
-		</section>
-	</main>
-{% endblock %}
+		</div>
+
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>A propos</h3>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Texte</th>
+									<th>Photo</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for about in abouts %}
+									<tr>
+										<td>{{ about.aboutText }}</td>
+										<td><img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" width="80"></td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-5">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Domaines d'expertise</h3>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Logo</th>
+									<th>Titre</th>
+									<th>Texte</th>
+									<th>Liste</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for skill in skills %}
+									<tr>
+										<td><img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" width="50px"></td>
+										<td>{{ skill.skillTitle }}</td>
+										<td>{{ skill.skillText }}</td>
+										<td>{{ skill.skillList }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mr-0 ml-0">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Réalisations</h3>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Image</th>
+									<th>Titre</th>
+									<th>Description</th>
+									<th>Compétences</th>
+									<th>Lien</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for project in projects %}
+									<tr>
+										<td><img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" style="width: 80px;"></td>
+										<td>{{ project.projectTitle }}</td>
+										<td>{{ project.projectText }}</td>
+										<td>
+											{% for skill in project.skills %}
+												{{ skill.skillTitle }}
+												{% if not loop.last %},
+												{% endif %}
+											{% endfor %}
+										</td>
+										<td>{{ project.github }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Parcours</h3>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Titre</th>
+									<th>Entreprise/École</th>
+									<th>Ville</th>
+									<th>Début</th>
+									<th>Fin</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for career in careers %}
+									<tr>
+										<td>{{ career.careerTitle }}</td>
+										<td>{{ career.careerCompany }}</td>
+										<td>{{ career.careerCity }}</td>
+										<td>{{ career.startDate }}</td>
+										<td>{{ career.endDate }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></section></main>{% endblock %}
