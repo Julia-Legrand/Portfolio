@@ -75,11 +75,13 @@ span {
 
 /***** HEADER *****/
 .headerIndex {
-    height: 100vh;
-    background-image: linear-gradient(rgb(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper.jpg);
+    background-image: linear-gradient(rgb(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper-compressed.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: auto;
 
     .navbar-nav {
         a {

@@ -158,14 +158,23 @@
 }
 @media all and (max-width: 400px) {
   /***** HEADER *****/
-  header #presentation-section h1 {
-    font-size: 40px;
+  .headerIndex {
+    background-attachment: scroll;
+    min-height: 50vh !important;
+    height: auto;
+  }
+  .headerIndex #presentation-section h1 {
+    font-size: 50px;
   }
   /***** ABOUT *****/
   #à-propos .aboutPicture img {
     width: 250px !important;
     height: auto;
     margin: 20px 0 60px 0 !important;
+  }
+  /***** SKILLS *****/
+  #compétences {
+    background-attachment: scroll;
   }
   /***** PROJECTS *****/
   #réalisations .projectBloc {
@@ -211,6 +220,14 @@
   }
   .buttons .custom-form {
     width: 280px !important;
+  }
+  /***** CV *****/
+  #cv-section {
+    background-attachment: scroll;
+  }
+  /***** CONTACT *****/
+  #me-contacter {
+    background-attachment: scroll;
   }
 }
 /*************** GLOBAL ***************/
@@ -294,11 +311,13 @@ span {
 /*************** INDEX ***************/
 /***** HEADER *****/
 .headerIndex {
-  height: 100vh;
-  background-image: linear-gradient(rgba(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper.jpg);
+  background-image: linear-gradient(rgba(1, 1, 1, 0.6), rgba(1, 1, 1, 0.6)), url(../images/wallpaper-compressed.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: auto;
 }
 .headerIndex .navbar-nav a {
   text-transform: uppercase;

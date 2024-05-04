@@ -1,149 +1,162 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio - Julia LEGRAND{% endblock %}
+{% block title %}Portfolio - Julia LEGRAND
+{% endblock %}
 
 {% block header %}
-    <header class="headerIndex">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="ml-auto">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#monMenu" aria-controls="monMenu" aria-expanded="false" aria-label="Menu pour mobile">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="monMenu">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#à-propos">A propos</a>
-                        <a class="nav-item nav-link" href="#compétences">Domaines d'expertise</a>
-                        <a class="nav-item nav-link" href="#réalisations">Réalisations</a>
-                        <a class="nav-item nav-link" href="#parcours">Parcours</a>
-                        <a class="nav-item nav-link" href="#me-contacter">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <section id="presentation-section">
-            {% for presentation in presentations %}
-                <h1>Julia</h1>
-                <h1>{{ presentation.title }}</h1>
-            {% endfor %}
-        </section>
-    </header>
+	<header class="headerIndex">
+		<nav class="navbar navbar-expand-md navbar-dark">
+			<div class="ml-auto">
+				<div class="collapse navbar-collapse" id="monMenu">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="#à-propos">A propos</a>
+						<a class="nav-item nav-link" href="#compétences">Domaines d'expertise</a>
+						<a class="nav-item nav-link" href="#réalisations">Réalisations</a>
+						<a class="nav-item nav-link" href="#parcours">Parcours</a>
+						<a class="nav-item nav-link" href="#me-contacter">Contact</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<section id="presentation-section">
+			{% for presentation in presentations %}
+				<h1>Julia</h1>
+				<h1>{{ presentation.title }}</h1>
+			{% endfor %}
+		</section>
+	</header>
 {% endblock %}
 
 {% block body %}
 
-    <!--A propos-->
+	<!--A propos-->
 
-    <section id="à-propos">
-    {% for about in abouts %}
-        <div class="aboutText animate-from-left">
-            <h2>A propos</h2>
-            <p>{{ about.aboutText }}</p>
-            {% for presentation in presentations %}
-                <a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV<i class="fa-solid fa-download"></i></a>
-            {% endfor %}
-        </div>
-        <div class="aboutPicture animate-from-right">
-            <img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
-        </div>
-    {% endfor %}
-    </section>
+	<section id="à-propos">
+		{% for about in abouts %}
+			<div class="aboutText animate-from-left">
+				<h2>A propos</h2>
+				<p>{{ about.aboutText }}</p>
+				{% for presentation in presentations %}
+					<a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV<i class="fa-solid fa-download"></i>
+					</a>
+				{% endfor %}
+			</div>
+			<div class="aboutPicture animate-from-right">
+				<img src="{{ asset('uploads/images/' ~ about.aboutPicture) }}" alt="photo">
+			</div>
+		{% endfor %}
+	</section>
 
-    <!--Domaines d'expertise-->
+	<!--Domaines d'expertise-->
 
-    <section id="compétences">
-        <h2>Domaines d'expertise</h2>
-            <div class="skillBlocs">
-                {% for skill in skills %}
-                    <div class="skillBloc">
-                        <img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" alt="logo compétences">
-                        <h3>{{ skill.skillTitle }}</h3>
-                        <p>{{ skill.skillText }}</p>
-                        <p><strong>{{ skill.skillList }}</strong></p>
-                    </div>
-                {% endfor %}
-            </div>
-    </section>
+	<section id="compétences">
+		<h2>Domaines d'expertise</h2>
+		<div class="skillBlocs">
+			{% for skill in skills %}
+				<div class="skillBloc">
+					<img src="{{ asset('uploads/images/' ~ skill.skillPicture) }}" alt="logo compétences">
+					<h3>{{ skill.skillTitle }}</h3>
+					<p>{{ skill.skillText }}</p>
+					<p>
+						<strong>{{ skill.skillList }}</strong>
+					</p>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
 
-    <!--Réalisations-->
+	<!--Réalisations-->
 
-    <section id="réalisations">
-        <h2>Réalisations</h2>
-        <div class="projectBlocs">
-            {% for project in projects %}
-                <div class="projectBloc">
-                    <img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran du projet">
+	<section id="réalisations">
+		<h2>Réalisations</h2>
+		<div class="projectBlocs">
+			{% for project in projects %}
+				<div class="projectBloc">
+					<img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran du projet">
 
-                    {% for picture in project.pictures %}
-                        <span class="printScreen">
-                            <img src="{{ asset('uploads/images/' ~ picture.picture) }}">
-                        </span>
-                    {% endfor %}
+					{% for picture in project.pictures %}
+						<span class="printScreen">
+							<img src="{{ asset('uploads/images/' ~ picture.picture) }}">
+						</span>
+					{% endfor %}
 
-                    <div class="projectTitle">
-                        <h3>{{ project.projectTitle }}</h3>
-                        {% if project.github %}
-                            <a href="{{ project.github }}" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        {% endif %}
-                    </div>
+					<div class="projectTitle">
+						<h3>{{ project.projectTitle }}</h3>
+						{% if project.github %}
+							<a href="{{ project.github }}" target="_blank">
+								<i class="fa-brands fa-github"></i>
+							</a>
+						{% endif %}
+					</div>
 
-                    <span class="textProject">{{ project.projectText }}</span>
+					<span class="textProject">{{ project.projectText }}</span>
 
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
 
-    <!--Parcours-->
+	<!--Parcours-->
 
-    <section id="parcours">
-        <h2>Parcours</h2>
-        <div class="timeline">
-            {% for career in careers %}
-                <article class="career-article">
-                    <h4>{{ career.careerTitle }}</h4>
-                    <ul>
-                        <li>{{ career.careerCompany }}</li>
-                        <li>{{ career.careerCity }}</li>
-                        <li>{{ career.startDate }} - {{ career.endDate }}</li>
-                    </ul>
-                </article>
-            {% endfor %}
-        </div> 
-    </section>
+	<section id="parcours">
+		<h2>Parcours</h2>
+		<div class="timeline">
+			{% for career in careers %}
+				<article class="career-article">
+					<h4>{{ career.careerTitle }}</h4>
+					<ul>
+						<li>{{ career.careerCompany }}</li>
+						<li>{{ career.careerCity }}</li>
+						<li>{{ career.startDate }}
+							-
+							{{ career.endDate }}</li>
+					</ul>
+				</article>
+			{% endfor %}
+		</div>
+	</section>
 
-    <!--Télécharger le CV-->
+	<!--Télécharger le CV-->
 
-    <section id="cv-section">
-        <div class="cv">
-            <div class="cv-link">
-                {% for presentation in presentations %}
-                    <a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV</a>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+	<section id="cv-section">
+		<div class="cv">
+			<div class="cv-link">
+				{% for presentation in presentations %}
+					<a href="{{ asset('uploads/images/' ~ presentation.cv) }}" download>Télécharger mon CV</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
 
-    <!--Contact-->
+	<!--Contact-->
 
-    <section id="me-contacter">
-        <h2>Contact</h2>
-        {{ include('contact/_form.html.twig') }}
-    </section>
+	<section id="me-contacter">
+		<h2>Contact</h2>
+		{{ include('contact/_form.html.twig') }}
+	</section>
 {% endblock %}
 
 {% block footer %}
-<footer>
-    {% for presentation in presentations %}
-		<div class="legals1">
-			<p>Julia LEGRAND | 2023 | Tous droits réservés.</p>
-		</div>
-		<div class="socials">
-			<a href="https://{{ presentation.githubLink }}" target="_blank"><i class="fa-brands fa-github"></i></a>
-			<a href="https://{{ presentation.linkedinLink }}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-		</div>
-        <div class="legals2">
-			<small><a href="/politique-de-confidentialite" target="_blank">Politique de confidentialité</a> | <a href="/mentions-legales" target="_blank">Mentions légales</a></small>
-		</div>
-	{% endfor %}
-</footer>
+	<footer>
+		{% for presentation in presentations %}
+			<div class="legals1">
+				<p>Julia LEGRAND | 2023 | Tous droits réservés.</p>
+			</div>
+			<div class="socials">
+				<a href="https://{{ presentation.githubLink }}" target="_blank">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<a href="https://{{ presentation.linkedinLink }}" target="_blank">
+					<i class="fa-brands fa-linkedin"></i>
+				</a>
+			</div>
+			<div class="legals2">
+				<small>
+					<a href="/politique-de-confidentialite" target="_blank">Politique de confidentialité</a>
+					|
+					<a href="/mentions-legales" target="_blank">Mentions légales</a>
+				</small>
+			</div>
+		{% endfor %}
+	</footer>
 {% endblock %}

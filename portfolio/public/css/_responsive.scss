@@ -219,10 +219,14 @@
 @media all and (max-width:400px) {
 
     /***** HEADER *****/
-    header {
+    .headerIndex {
+        background-attachment: scroll;
+        min-height: 50vh !important;
+        height: auto;
+
         #presentation-section {
             h1 {
-                font-size: 40px;
+                font-size: 50px;
             }
         }
     }
@@ -234,6 +238,11 @@
             height: auto;
             margin: 20px 0 60px 0 !important;
         }
+    }
+
+    /***** SKILLS *****/
+    #compétences {
+        background-attachment: scroll;
     }
 
     /***** PROJECTS *****/
@@ -298,5 +307,15 @@
         .custom-form {
             width: 280px !important;
         }
+    }
+
+    /***** CV *****/
+    #cv-section {
+        background-attachment: scroll;
+    }
+
+    /***** CONTACT *****/
+    #me-contacter {
+        background-attachment: scroll;
     }
 }
