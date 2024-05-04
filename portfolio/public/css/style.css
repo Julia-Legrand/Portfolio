@@ -159,7 +159,7 @@
 @media all and (max-width: 400px) {
   /***** HEADER *****/
   .headerIndex {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
     min-height: 50vh !important;
     height: auto;
   }
@@ -174,7 +174,7 @@
   }
   /***** SKILLS *****/
   #compétences {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
   }
   /***** PROJECTS *****/
   #réalisations .projectBloc {
@@ -223,11 +223,11 @@
   }
   /***** CV *****/
   #cv-section {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
   }
   /***** CONTACT *****/
   #me-contacter {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
   }
 }
 /*************** GLOBAL ***************/

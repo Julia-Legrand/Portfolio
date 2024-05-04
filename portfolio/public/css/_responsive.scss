@@ -220,7 +220,7 @@
 
     /***** HEADER *****/
     .headerIndex {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
         min-height: 50vh !important;
         height: auto;
 
@@ -242,7 +242,7 @@
 
     /***** SKILLS *****/
     #compétences {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
     }
 
     /***** PROJECTS *****/
@@ -311,11 +311,11 @@
 
     /***** CV *****/
     #cv-section {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
     }
 
     /***** CONTACT *****/
     #me-contacter {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
     }
 }

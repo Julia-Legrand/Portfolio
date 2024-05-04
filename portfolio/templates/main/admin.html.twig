@@ -138,7 +138,9 @@
 											{% for presentation in presentations %}
 												<tr>
 													<td>{{ presentation.title }}</td>
-													<td><embed src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80" height="113"></td>
+													<td>
+														<object data="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80" height="113"></td>
+													</td>
 													<td>{{ presentation.githubLink }}</td>
 													<td>{{ presentation.linkedinLink }}</td>
 												</tr>

@@ -23,7 +23,9 @@
 					<tr>
 						<td data-label="Image :"><img src="{{ asset('uploads/images/' ~ presentation.wallpaper) }}" width="80px"></td>
 						<td data-label="Titre :">{{ presentation.title }}</td>
-						<td data-label="CV :"><embed src="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px" height="113"></td>
+						<td data-label="CV :">
+							<object data="{{ asset('uploads/images/' ~ presentation.cv) }}" width="80px" height="113"></td>
+						</td>
 						<td data-label="GitHub :">{{ presentation.githubLink }}</td>
 						<td data-label="LinkedIn :">{{ presentation.linkedinLink }}</td>
 						<td data-label="Modifier">
