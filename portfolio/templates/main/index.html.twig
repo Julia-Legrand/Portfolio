@@ -72,7 +72,7 @@
 		<div class="projectBlocs">
 			{% for project in projects %}
 				<div class="projectBloc">
-					<img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="impression écran du projet">
+					<img src="{{ asset('uploads/images/' ~ project.projectPicture) }}" alt="Impression écran du projet">
 
 					{% for picture in project.pictures %}
 						<span class="printScreen">
@@ -83,7 +83,7 @@
 					<div class="projectTitle">
 						<h3>{{ project.projectTitle }}</h3>
 						{% if project.github %}
-							<a href="{{ project.github }}" target="_blank">
+							<a href="{{ project.github }}" target="_blank" aria-label="Lien vers la page GitHub du projet">
 								<i class="fa-brands fa-github"></i>
 							</a>
 						{% endif %}
@@ -103,7 +103,7 @@
 		<div class="timeline">
 			{% for career in careers %}
 				<article class="career-article">
-					<h4>{{ career.careerTitle }}</h4>
+					<h3>{{ career.careerTitle }}</h3>
 					<ul>
 						<li>{{ career.careerCompany }}</li>
 						<li>{{ career.careerCity }}</li>
@@ -143,18 +143,18 @@
 				<p>Julia LEGRAND | 2023 | Tous droits réservés.</p>
 			</div>
 			<div class="socials">
-				<a href="https://{{ presentation.githubLink }}" target="_blank">
+				<a href="https://{{ presentation.githubLink }}" target="_blank" aria-label="Lien vers ma page GitHub">
 					<i class="fa-brands fa-github"></i>
 				</a>
-				<a href="https://{{ presentation.linkedinLink }}" target="_blank">
+				<a href="https://{{ presentation.linkedinLink }}" target="_blank" aria-label="Lien vers ma page LinkedIn">
 					<i class="fa-brands fa-linkedin"></i>
 				</a>
 			</div>
 			<div class="legals2">
 				<small>
-					<a href="/politique-de-confidentialite" target="_blank">Politique de confidentialité</a>
+					<a href="/politique-de-confidentialite" target="_blank" aria-label="Lien vers la politique de confidentialité">Politique de confidentialité</a>
 					|
-					<a href="/mentions-legales" target="_blank">Mentions légales</a>
+					<a href="/mentions-legales" target="_blank" aria-label="Lien vers les mentions légales">Mentions légales</a>
 				</small>
 			</div>
 		{% endfor %}

@@ -70,50 +70,72 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll();
 });
 
-// Animation to display project picture on fullscreen
 document.addEventListener('DOMContentLoaded', function () {
     var projectBlocks = document.querySelectorAll('.projectBloc');
 
     projectBlocks.forEach(function (block) {
         var projectImage = block.querySelector('img');
         var printScreenImage = block.querySelector('.printScreen img');
-        var overlay = document.createElement('div');
 
-        // At the beginning, hide the image with the 'printScreen' class
-        printScreenImage.style.display = 'none';
+        // Vérifier si les éléments ont été trouvés
+        if (projectImage && printScreenImage) {
+            var overlay = document.createElement('div');
+            var closeButton = document.createElement('button');
 
-        // Creating black overlay
-        overlay.className = 'overlay';
-        document.body.appendChild(overlay);
+            // At the beginning, hide the image with the 'printScreen' class
+            printScreenImage.style.display = 'none';
 
-        // Handling the click on the 'projectPicture' image
-        projectImage.addEventListener('click', function () {
-            printScreenImage.style.display = 'block';
-            printScreenImage.classList.add('fullscreen');
-            overlay.style.display = 'block';
-        });
+            // Creating black overlay
+            overlay.className = 'overlay';
+            document.body.appendChild(overlay);
 
-        // Handling the click outside of the image
-        document.addEventListener('click', function (event) {
-            if (
-                printScreenImage.classList.contains('fullscreen') &&
-                !printScreenImage.contains(event.target) &&
-                !projectImage.contains(event.target)
-            ) {
-                // If the image is in fullscreen and the click is outside, hide it
+            // Creating close button
+            closeButton.className = 'close-btn';
+            closeButton.innerHTML = '&times;';
+            document.body.appendChild(closeButton);
+            closeButton.style.display = 'none';
+
+            // Handling the click on the 'projectPicture' image
+            projectImage.addEventListener('click', function () {
+                printScreenImage.style.display = 'block';
+                printScreenImage.classList.add('fullscreen');
+                overlay.style.display = 'block';
+                closeButton.style.display = 'block';
+            });
+
+            // Handling the click on the close button
+            closeButton.addEventListener('click', function () {
                 printScreenImage.classList.remove('fullscreen');
                 printScreenImage.style.display = 'none';
                 overlay.style.display = 'none';
-            }
-        });
+                closeButton.style.display = 'none';
+            });
 
-        // Listen for the end of the transition to restore the visibility of the main image
-        printScreenImage.addEventListener('transitionend', function () {
-            if (!printScreenImage.classList.contains('fullscreen')) {
-                projectImage.style.display = 'block';
-                overlay.style.display = 'none';
-            }
-        });
+            // Handling the click outside of the image
+            document.addEventListener('click', function (event) {
+                if (
+                    printScreenImage.classList.contains('fullscreen') &&
+                    !printScreenImage.contains(event.target) &&
+                    !projectImage.contains(event.target) &&
+                    !closeButton.contains(event.target)
+                ) {
+                    // If the image is in fullscreen and the click is outside, hide it
+                    printScreenImage.classList.remove('fullscreen');
+                    printScreenImage.style.display = 'none';
+                    overlay.style.display = 'none';
+                    closeButton.style.display = 'none';
+                }
+            });
+
+            // Listen for the end of the transition to restore the visibility of the main image
+            printScreenImage.addEventListener('transitionend', function () {
+                if (!printScreenImage.classList.contains('fullscreen')) {
+                    projectImage.style.display = 'block';
+                    overlay.style.display = 'none';
+                    closeButton.style.display = 'none';
+                }
+            });
+        }
     });
 });
 

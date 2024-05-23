@@ -42,7 +42,7 @@ class MainController extends AbstractController
             'presentations' => $presentationRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'projects' => $projectsRepository->findAll(),
-            'careers' => $careerRepository->findAll(),
+            'careers' => $careerRepository->findAllOrderedByDate(),
             'pictures' => $picturesRepository->findAll(),
         ]);
     }
@@ -56,7 +56,7 @@ class MainController extends AbstractController
             'presentations' => $presentationRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'projects' => $projectsRepository->findAll(),
-            'careers' => $careerRepository->findAll(),
+            'careers' => $careerRepository->findAllOrderedByDate(),
             'contacts' => $contactRepository->findAll(),
             'pictures' => $picturesRepository->findAll(),
         ]);

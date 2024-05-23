@@ -26,21 +26,24 @@
 						<td data-label="CV :">
 							<embed src="{{ asset('uploads/images/' ~ presentation.cv) }}" type="application/pdf" width="80px" height="113">
 						</td>
+						<td data-label="GitHub :">{{ presentation.githubLink }}</td>
+						<td data-label="LinkedIn :">{{ presentation.linkedinLink }}</td>
+						<td data-label="Modifier">
+							<a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}">
+								<i class="fa-solid fa-pen"></i>
+							</a>
+						</td>
 					</tr>
-				</td>
-				<td data-label="GitHub :">{{ presentation.githubLink }}</td>
-				<td data-label="LinkedIn :">{{ presentation.linkedinLink }}</td>
-				<td data-label="Modifier">
-					<a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}">
-						<i class="fa-solid fa-pen"></i>
-					</a>
-				</td>
+				{% else %}
+					<tr>
+						<td colspan="6">Donnée vide</td>
+					</tr>
+				{% endfor %}
 			</tbody>
-		</tr>
-	{% else %}
-		<tr>
-			<td colspan="7">Donnée vide</td>
-		</tr>
-	{% endfor %}
-</tbody></table><div class="buttons">
-<a href="{{ path('admin') }}" class="btn">Retour</a></div></main>{% endblock %}
+		</table>
+
+		<div class="buttons">
+			<a href="{{ path('admin') }}" class="btn">Retour</a>
+		</div>
+	</main>
+{% endblock %}

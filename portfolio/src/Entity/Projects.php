@@ -29,7 +29,7 @@ class Projects
     #[ORM\ManyToMany(targetEntity: Skills::class, inversedBy: 'projects')]
     private Collection $skills;
 
-    #[ORM\OneToMany(mappedBy: 'projects', targetEntity: Pictures::class)]
+    #[ORM\OneToMany(mappedBy: 'projects', targetEntity: Pictures::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $pictures;
 
     #[ORM\Column(length: 100)]

@@ -194,12 +194,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-  #réalisations .printScreen img.fullscreen {
-    position: fixed;
-    top: 0;
-    left: 47%;
-    height: auto;
-  }
   /***** CAREER *****/
   #parcours .timeline article {
     width: 280px !important;
@@ -503,11 +497,13 @@ span {
 
 .printScreen img.fullscreen {
   position: fixed;
-  top: 0;
+  top: 45%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  max-width: 90%;
   width: auto;
-  height: 100%;
+  max-height: 90vh;
+  overflow: auto;
   z-index: 9999;
   border-radius: 0;
   box-shadow: none;
@@ -522,6 +518,19 @@ span {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
+  z-index: 9998;
+}
+
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 40px;
 }
 
 /***** CAREER *****/
@@ -541,6 +550,10 @@ span {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 60px;
+}
+#parcours .timeline h3 {
+  font-family: "Alata", sans-serif;
+  font-size: 18px;
 }
 #parcours .timeline:after {
   content: "";
@@ -798,6 +811,7 @@ footer .legals2 a {
 .mainAdmin table td {
   font-size: 10px;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .mainIndex {
@@ -810,6 +824,7 @@ footer .legals2 a {
 .mainIndex .table th,
 .mainIndex .table td {
   text-align: center;
+  word-wrap: break-word;
 }
 .mainIndex a {
   color: black;
